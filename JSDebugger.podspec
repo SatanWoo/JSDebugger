@@ -14,7 +14,8 @@ JavaScript-Based Debugger For Inspecting Running State Of Your Application
   
   s.ios.deployment_target = '9.0'
   s.platform = :ios, '9.0'
-  s.frameworks = ["JavaScriptCore", "libstdc++"]
+  s.frameworks = ["JavaScriptCore"]
+  s.libraries = 'c++'
 
   s.requires_arc = true
   s.exclude_files = 'Source/Core/Plugin/Plugin/JDChoose.mm'
@@ -25,7 +26,7 @@ JavaScript-Based Debugger For Inspecting Running State Of Your Application
   end
 
   s.source_files = 'Source/**/*'
-  s.public_header_files = 'Source/**/JSDebugger.h'
+  s.public_header_files = 'Source/**/*.h'
   s.vendored_libraries = 'Source/Core/FFI/Vendor/libffi.a'
   
 end

@@ -13,7 +13,6 @@
 		19776A222163CF610004E15E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19776A202163CF610004E15E /* Main.storyboard */; };
 		19776A242163CF610004E15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19776A232163CF610004E15E /* Assets.xcassets */; };
 		19776A272163CF610004E15E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19776A252163CF610004E15E /* LaunchScreen.storyboard */; };
-		19776A332163D6FA0004E15E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19776A322163D6FA0004E15E /* libstdc++.6.0.9.tbd */; };
 		19776A352163D93F0004E15E /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 19776A342163D93F0004E15E /* demo.js */; };
 		BE6093A99023CA68A4836B36 /* libPods-JSDebuggerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0102F3C40B62EBEFC158364D /* libPods-JSDebuggerDemo.a */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19776A332163D6FA0004E15E /* libstdc++.6.0.9.tbd in Frameworks */,
 				BE6093A99023CA68A4836B36 /* libPods-JSDebuggerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
