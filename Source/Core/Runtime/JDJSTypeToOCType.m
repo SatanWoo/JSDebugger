@@ -32,45 +32,47 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
     }
     
     if (type == kJSTypeObject) {
-        JSObjectRef jsObj = (JSObjectRef)value;
-        // @SatanWoo: Get the Array constructor to check if this Object is an Array
-        JSStringRef arrayName = JSStringCreateWithUTF8CString("Array");
-        JSObjectRef arrayConstructor = (JSObjectRef)JSObjectGetProperty(ctx, JSContextGetGlobalObject(ctx), arrayName, NULL);
-        JSStringRelease(arrayName);
         
-        if(JSValueIsInstanceOfConstructor(ctx, jsObj, arrayConstructor, NULL)) {
-            // Array
+        if (JSValueIsDate(ctx, value)) {
+            double val = JSValueToNumber(ctx, value, NULL);
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:val / 1000.0f];
+            return date;
+            
+        } else if (JSValueIsArray(ctx, value)) {
             JSStringRef lengthName = JSStringCreateWithUTF8CString("length");
-            int count = JSValueToNumber(ctx, JSObjectGetProperty(ctx, jsObj, lengthName, NULL), NULL);
+            int count = JSValueToNumber(ctx, JSObjectGetProperty(ctx, (JSObjectRef)value, lengthName, NULL), NULL);
             JSStringRelease(lengthName);
             
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:count];
             for( int i = 0; i < count; i++ ) {
-                NSObject *obj = JDConvertJSValueToNSObject(ctx, JSObjectGetPropertyAtIndex(ctx, jsObj, i, NULL));
-                [array addObject:(obj ? obj : NSNull.null)];
+                NSObject *obj = JDConvertJSValueToNSObject(ctx, JSObjectGetPropertyAtIndex(ctx, (JSObjectRef)value, i, NULL));
+                array[i] = obj ?: [NSNull null];
             }
-            return array;
-        } else {
+            
+            return array.copy;
+        }
+        
+        else {
             // @SatanWoo First Check Is Self-Defined Class
             if (JSValueIsObjectOfClass(ctx, value, JDClass4JS())) {
-                Class cls = (__bridge Class)JSObjectGetPrivate(jsObj);
+                Class cls = (__bridge Class)JSObjectGetPrivate((JSObjectRef)value);
                 return cls;
             } else if (JSValueIsObjectOfClass(ctx, value, JDInstance4JS())) {
-                id instance = (__bridge id)JSObjectGetPrivate(jsObj);
+                id instance = (__bridge id)JSObjectGetPrivate((JSObjectRef)value);
                 return instance;
             } else if (JSValueIsObjectOfClass(ctx, value, JDMethod4JS())) {
-                SEL sel = (SEL)JSObjectGetPrivate(jsObj);
+                SEL sel = (SEL)JSObjectGetPrivate((JSObjectRef)value);
                 return [NSValue valueWithPointer:sel];
             }
             
             // @SatanWoo Then regard it as plain object and convert it to NSDictionary
-            JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(ctx, jsObj);
+            JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(ctx, (JSObjectRef)value);
             size_t count = JSPropertyNameArrayGetCount(properties);
             
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:count];
             for( size_t i = 0; i < count; i++ ) {
                 JSStringRef jsName = JSPropertyNameArrayGetNameAtIndex(properties, i);
-                NSObject *obj = JDConvertJSValueToNSObject(ctx, JSObjectGetProperty(ctx, jsObj, jsName, NULL));
+                NSObject *obj = JDConvertJSValueToNSObject(ctx, JSObjectGetProperty(ctx, (JSObjectRef)value, jsName, NULL));
                 
                 NSString *name = JDCreateNSStringFromJSString(ctx, jsName);
                 dict[name] = obj ? obj : NSNull.null;

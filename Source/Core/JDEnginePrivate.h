@@ -12,7 +12,6 @@
 #import "JDEngine.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
-
 @interface JDEngine()
 @property (nonatomic, strong) JSContext *context;
 @end

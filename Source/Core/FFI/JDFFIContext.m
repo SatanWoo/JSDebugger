@@ -97,9 +97,12 @@ static ffi_type *JDConvertStructToFFI(NSString *structName)
 
 static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValueRef value, void *dst)
 {
+    
+#define JDSetFallBackToNULL \
+        *(void **)dst = (__bridge void *)[NSNull null];
+    
     if (JSValueIsNull(ctx, value)) {
-        NSNull *null = [NSNull null];
-        *(void **)dst = (__bridge void *)null;
+        JDSetFallBackToNULL;
     } else if (JSValueIsNumber(ctx, value)) {
         double val = JSValueToNumber(ctx, value, NULL);
         if (encoding == JDEncodingFloat) {
@@ -123,31 +126,38 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
         } else if (encoding == JDEncodingUInt64) {
             *(uint64_t *)dst = (uint64_t)val;
         } else if (encoding == JDEncodingObject) {
-            NSNumber *number = @(val);
-            *(void **)dst = (__bridge_retained void*)number;
+            NSNumber *number = JDConvertJSValueToNSObject(ctx, value);
+            if (number) {
+                *(void **)dst = (__bridge_retained void*)number;
+            } else {
+                JDSetFallBackToNULL;
+            }
         }
     } else if (JSValueIsDate(ctx, value)) {
-        double val = JSValueToNumber(ctx, value, NULL);
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:val / 1000.0f];
-        *(void **)dst = (__bridge void *)date;
-    } else if (JSValueIsString(ctx, value)) {
-        JSStringRef s = JSValueToStringCopy(ctx, value, NULL);
-        NSString *str = JDCreateNSStringFromJSString(ctx, s);
-        JSStringRelease(s);
-        *(void **)dst = (__bridge_retained void*)str;
-    } else if (JSValueIsArray(ctx, value)) {
-        JSStringRef lengthName = JSStringCreateWithUTF8CString("length");
-        int count = JSValueToNumber(ctx, JSObjectGetProperty(ctx, (JSObjectRef)value, lengthName, NULL), NULL);
-        JSStringRelease(lengthName);
-        
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:count];
-        for( int i = 0; i < count; i++ ) {
-            NSObject *obj = JDConvertJSValueToNSObject(ctx, JSObjectGetPropertyAtIndex(ctx, (JSObjectRef)value, i, NULL));
-            array[i] = obj ?: [NSNull null];
+        NSDate *date = JDConvertJSValueToNSObject(ctx, value);
+        if (date) {
+            *(void **)dst = (__bridge_retained void *)date;
+        } else {
+            JDSetFallBackToNULL;
         }
-        *(void **)dst = (__bridge_retained void*)array;
+    } else if (JSValueIsString(ctx, value)) {
+        NSString *str = JDConvertJSValueToNSObject(ctx, value);
+        if (str) {
+            *(void **)dst = (__bridge_retained void*)str;
+        } else {
+            JDSetFallBackToNULL;
+        }
+        
+    } else if (JSValueIsArray(ctx, value)) {
+        NSArray *array = JDConvertJSValueToNSObject(ctx, value);
+        if (array) {
+            *(void **)dst = (__bridge_retained void*)array;
+        } else {
+            JDSetFallBackToNULL;
+        }
+        
     } else if (JSValueIsObject(ctx, value)) {
-        // 判断是不是我们要的三种，是的话，取出来
+        // @SatanWoo: Check Our Own Wrapper Object
         if (JSValueIsObjectOfClass(ctx, value, JDClass4JS())) {
             Class cls = (__bridge Class)(JSObjectGetPrivate((JSObjectRef)value));
             *(Class *)dst = cls;
@@ -159,16 +169,11 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
             *(SEL *)dst = sel;
         } else {
             // plain object
-            JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(ctx, (JSObjectRef)value);
-            size_t count = JSPropertyNameArrayGetCount(properties);
-            
-            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:count];
-            for(size_t i = 0; i < count; i++) {
-                JSStringRef jsName = JSPropertyNameArrayGetNameAtIndex(properties, i);
-                id obj = JDConvertJSValueToNSObject(ctx, JSObjectGetProperty(ctx, (JSObjectRef)value, jsName, NULL));
-                dict[JDCreateNSStringFromJSString(ctx, jsName)] = obj ? obj : NSNull.null;
+            NSDictionary *dict = JDConvertJSValueToNSObject(ctx, value);
+            if (!dict) {
+                JDSetFallBackToNULL;
+                return;
             }
-            JSPropertyNameArrayRelease(properties);
             
             BOOL ret = [dict canConvertToRect];
             if (ret) {
