@@ -122,6 +122,9 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
             *(int64_t *)dst = (int64_t)val;
         } else if (encoding == JDEncodingUInt64) {
             *(uint64_t *)dst = (uint64_t)val;
+        } else if (encoding == JDEncodingObject) {
+            NSNumber *number = @(val);
+            *(void **)dst = (__bridge_retained void*)number;
         }
     } else if (JSValueIsDate(ctx, value)) {
         double val = JSValueToNumber(ctx, value, NULL);
@@ -393,6 +396,7 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
             return JSValueMakeUndefined(ctx);
         }
     }
+    
     
     return JSValueMakeUndefined(ctx);
 }

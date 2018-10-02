@@ -28,7 +28,7 @@
     
     [self.view addSubview:self.testLabel];
     
-    NSString *jsFilePathOnMac = @"/PathToDesktop/demo.js"; // @SatanWoo: There is one copy in your project
+    NSString *jsFilePathOnMac = @"/Users/z/Desktop/test/demo.js"; // @SatanWoo: There is one copy in your project
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:jsFilePathOnMac]) {
         self.fileWatcher = [[JDLocalFileObserver alloc] initWithFilePath:jsFilePathOnMac changeBlock:^{
@@ -44,9 +44,15 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)printNSArray:(NSArray *)array
+{
+    NSLog(@"array is %@", array);
 }
 
 

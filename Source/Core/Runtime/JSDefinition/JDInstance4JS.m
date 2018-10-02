@@ -48,16 +48,6 @@ static JSValueRef JDInstanceGetProperty(JSContextRef ctx, JSObjectRef object, JS
     // @SatanWoo: Try regard it as property getter call directly
     SEL sel_data = NSSelectorFromString(JDFormatJSFunction(ocPropertyName));
     NSString *selName = NSStringFromSelector(sel_data);
-    if (![selName containsString:@":"]) {
-        IMP imp = class_getMethodImplementation([instance class], sel_data);
-        NSMethodSignature *methodSignature = [instance methodSignatureForSelector:sel_data];
-        
-        JDMethodBridge *methodBridge = [[JDMethodBridge alloc] initWithSignature:methodSignature
-                                                                        selector:sel_data
-                                                                         instace:instance
-                                                                             imp:imp];
-        return JDCallFunction(ctx, methodBridge, 0, NULL);
-    }
     
     // @SatanWoo: Give control back to Method4JS
     Method m = class_getInstanceMethod([instance class], sel_data);
