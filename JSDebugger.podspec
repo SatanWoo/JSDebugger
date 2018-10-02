@@ -13,8 +13,19 @@ JavaScript-Based Debugger For Inspecting Running State Of Your Application
   s.source           = { :git => 'https://github.com/SatanWoo/JSDebugger.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '9.0'
+  s.platform = :ios, '9.0'
+  s.frameworks = ["JavaScriptCore", "libstdc++"]
+
+  s.requires_arc = true
+  s.exclude_files = 'Source/Core/Plugin/Plugin/JDChoose.mm'
+
+  s.subspec 'no-arc' do |smrc|
+    smrc.source_files = 'Source/Core/Plugin/Plugin/JDChoose.mm'
+    smrc.requires_arc = false
+  end
 
   s.source_files = 'Source/**/*'
-  s.public_header_files = 'Source/**/*.h'
+  s.public_header_files = 'Source/**/JSDebugger.h'
+  s.vendored_libraries = 'Source/Core/FFI/Vendor/libffi.a'
   
 end

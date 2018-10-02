@@ -1,0 +1,3 @@
+target 'JSDebuggerDemo' do
+  pod 'JSDebugger', :path => '../'
+end
