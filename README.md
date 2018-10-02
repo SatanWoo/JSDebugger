@@ -2,6 +2,8 @@
 
 **JavaScript-Based Debugger For Inspecting Running State Of Your Application**
 
+> The status of this project is under rapid development, the stability is not guaranteed
+
 JSDebugger is a runtime inspecting tool for you to dig into details of your applications.
 
 It's built on top of JavaScriptCore within C level interface which aims to accelerate the bridging process between Objective-C and JavaScript.
@@ -11,7 +13,6 @@ It's built on top of JavaScriptCore within C level interface which aims to accel
 ### Methods
 
 	var view = UIView.alloc().init();
-	var arr = NSArray.arrayWithObjects_([1, 2, 3]);
 	view.setBackgroundColor_(UIColor.redColor());
 	
 You may notice the method name is to some extent different from Objective-C environment. To illustrate it more precisely, the following two steps are executed underlying before calling an Objective-C method:
@@ -105,7 +106,11 @@ Follow steps listed below,
 
 ## Example
 
+Checkout the JSDebuggerDemo
 
+## Contribution
+
+- JunyiXie
 
 ## Features:
 
