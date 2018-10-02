@@ -2,6 +2,8 @@
 
 **JavaScript-Based Debugger For Inspecting Running State Of Your Application**
 
+<span style="color:red">The status of this project is under rapid development, the stability is not guaranteed</span>
+
 JSDebugger is a runtime inspecting tool for you to dig into details of your applications.
 
 It's built on top of JavaScriptCore within C level interface which aims to accelerate the bridging process between Objective-C and JavaScript.
@@ -105,7 +107,11 @@ Follow steps listed below,
 
 ## Example
 
+Checkout the JSDebuggerDemo
 
+## Contribution
+
+- JunyiXie
 
 ## Features:
 
