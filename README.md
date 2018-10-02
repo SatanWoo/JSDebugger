@@ -13,6 +13,7 @@ It's built on top of JavaScriptCore within C level interface which aims to accel
 ### Methods
 
 	var view = UIView.alloc().init();
+	var k = NSMutableArray.alloc().init();
 	view.setBackgroundColor_(UIColor.redColor());
 	
 You may notice the method name is to some extent different from Objective-C environment. To illustrate it more precisely, the following two steps are executed underlying before calling an Objective-C method:
@@ -32,16 +33,16 @@ will be converted into following string:
 ### Getter & Setter
 
 	view.backgroundColor = UIColor.redColor();
-	var color = view.backgroundColor;
-	var bounds = view.bounds;
+	var color = view.backgroundColor();
+	var bounds = view.bounds();
 
-<b style="color:red">Don't Mix Getter With Calling Methods!</b>   
+<b style="color:red">Getter Is Not Supported. Use Method Instead Of Getter!!!</b>   
 
 For Example:
 
-	view.backgroundColor;   // It's Correct
+	view.backgroundColor;   // It's Wrong
 	
-	view.backgroundColor(); // It's Wrong
+	view.backgroundColor(); // It's Correct
 	
 ### JavaScript
 
@@ -68,8 +69,8 @@ For Example, suppose you have a class named `XXXViewController`
 	
 Then you will make some operation on it:
 
-	vc.isViewLoaded;
-	var view = vc.view;
+	vc.isViewLoaded();
+	var view = vc.view();
 	view.backgroundColor = UIColor.orangeColor();
 
 ## Playground
@@ -118,11 +119,14 @@ Here we list all features currently supported by **JSDebugger**:
 - [x] Class Methods  
 - [x] Instance Methods  
 - [x] Instance Property 
-- [x] Custom Getter & Setter
+- [x] Custom Setter
 - [x] Playground
 - [x] Data Structes: `primitive types`, `object`, `class`, `struct` (Partially)
 - [x] Choose  
 - [x] Introspect (Partially)
+- [ ] Customized Struct
+- [ ] Getter 
+- [ ] VA_LIST
 - [ ] Block
 - [ ] C Pointers
 
