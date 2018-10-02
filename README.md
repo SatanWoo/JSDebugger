@@ -110,15 +110,16 @@ Follow steps listed below,
 ## Features:
 
 Here we list all features currently supported by **JSDebugger**:
-
-[] Class Methods  
-[] Instance Methods  
-[] Instance Property  
-[] Custom Getter & Setter
-[] Playground
-[] Data Structes: `primitive types`, `object`, `class`, `struct`  
-[] Choose  
-[] Introspect
+- [x] Class Methods  
+- [x] Instance Methods  
+- [x] Instance Property 
+- [x] Custom Getter & Setter
+- [x] Playground
+- [x] Data Structes: `primitive types`, `object`, `class`, `struct` (Partially)
+- [x] Choose  
+- [x] Introspect (Partially)
+- [ ] Block
+- [ ] C Pointers
 
 **<span style="color:red">Blocks and C Pointers is not ready within this version of JSDebugger</span>**
 
