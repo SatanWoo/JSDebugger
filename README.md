@@ -13,7 +13,6 @@ It's built on top of JavaScriptCore within C level interface which aims to accel
 ### Methods
 
 	var view = UIView.alloc().init();
-	var arr = NSArray.arrayWithObjects_([1, 2, 3]);
 	view.setBackgroundColor_(UIColor.redColor());
 	
 You may notice the method name is to some extent different from Objective-C environment. To illustrate it more precisely, the following two steps are executed underlying before calling an Objective-C method:
