@@ -13,7 +13,7 @@
 		19776A222163CF610004E15E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19776A202163CF610004E15E /* Main.storyboard */; };
 		19776A242163CF610004E15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19776A232163CF610004E15E /* Assets.xcassets */; };
 		19776A272163CF610004E15E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19776A252163CF610004E15E /* LaunchScreen.storyboard */; };
-		19776A352163D93F0004E15E /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 19776A342163D93F0004E15E /* demo.js */; };
+		19776A6021652E260004E15E /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 19776A5F21652E260004E15E /* demo.js */; };
 		BE6093A99023CA68A4836B36 /* libPods-JSDebuggerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0102F3C40B62EBEFC158364D /* libPods-JSDebuggerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		19776A262163CF610004E15E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19776A282163CF610004E15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19776A322163D6FA0004E15E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		19776A342163D93F0004E15E /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
+		19776A5F21652E260004E15E /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
 		604675B9F688F7FB59ABC51E /* Pods-JSDebuggerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSDebuggerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSDebuggerDemo/Pods-JSDebuggerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FBBA29344B14E0572907B211 /* Pods-JSDebuggerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSDebuggerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSDebuggerDemo/Pods-JSDebuggerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +50,7 @@
 		19776A0B2163CF610004E15E = {
 			isa = PBXGroup;
 			children = (
+				19776A5F21652E260004E15E /* demo.js */,
 				19776A162163CF610004E15E /* JSDebuggerDemo */,
 				19776A152163CF610004E15E /* Products */,
 				227418D3D3157D4B1AA7F07F /* Pods */,
@@ -68,7 +69,6 @@
 		19776A162163CF610004E15E /* JSDebuggerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				19776A342163D93F0004E15E /* demo.js */,
 				19776A1A2163CF610004E15E /* AppDelegate.h */,
 				19776A1B2163CF610004E15E /* AppDelegate.m */,
 				19776A1D2163CF610004E15E /* ViewController.h */,
@@ -142,6 +142,7 @@
 				TargetAttributes = {
 					19776A132163CF610004E15E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = T3LQBYQCVZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -169,10 +170,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19776A6021652E260004E15E /* demo.js in Resources */,
 				19776A272163CF610004E15E /* LaunchScreen.storyboard in Resources */,
 				19776A242163CF610004E15E /* Assets.xcassets in Resources */,
 				19776A222163CF610004E15E /* Main.storyboard in Resources */,
-				19776A352163D93F0004E15E /* demo.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +374,7 @@
 			baseConfigurationReference = FBBA29344B14E0572907B211 /* Pods-JSDebuggerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3LQBYQCVZ;
 				INFOPLIST_FILE = JSDebuggerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -386,6 +388,7 @@
 			baseConfigurationReference = 604675B9F688F7FB59ABC51E /* Pods-JSDebuggerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3LQBYQCVZ;
 				INFOPLIST_FILE = JSDebuggerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,6 +16,7 @@
 #import "JDStruct.h"
 #import "JDNSStringFromJSString.h"
 #import "NSDictionary+JSConvert.h"
+#import "JDVariadicArguments.h"
 #import "ffi.h"
 @import ObjectiveC.runtime;
 
@@ -356,13 +357,31 @@ static bool JDFunctionCallPreCheck(JSContextRef ctx, JDMethodBridge *methodBridg
 JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
                           size_t argumentCount, const JSValueRef arguments[])
 {
+    /*if (argumentCount > methodBridge.argumentsType.count + 2) {
+        
+        NSMutableArray *temp = @[].mutableCopy;
+        
+        for (int i = 0; i < argumentCount; i++) {
+            JSValueRef valueRef = arguments[i];
+            id obj = JDConvertJSValueToNSObject(ctx, valueRef);
+            if (obj) [temp addObject:obj];
+        }
+        
+        JDVariadicArguments *arguments = [[JDVariadicArguments alloc] initWithArguments:temp];
+    }
+    
     if (!JDFunctionCallPreCheck(ctx, methodBridge, argumentCount, arguments)) {
         return JSValueMakeUndefined(ctx);
-    }
+    }*/
     
     //assert(methodBridge.argumentsType.count == argumentCount + 2);
     
-    size_t argCount = argumentCount + 2;
+    bool isVariadic = NO;
+    
+    size_t argCount = methodBridge.argumentsType.count;
+    if (argumentCount > methodBridge.argumentsType.count - 2) {
+        isVariadic = YES;
+    }
     
     ffi_type **ffiArgTypes = alloca(sizeof(ffi_type *) * argCount);
     void **ffiArgs = alloca(sizeof(void *) * argCount);
@@ -376,10 +395,54 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
     SEL selector = methodBridge.selector;
     ffiArgs[1] = &selector;
     
-    for (int i = 0; i < argumentCount; i++) {
+    // 1. @SatanWoo:Deal With Normal Arguments;
+    
+    int i = 0;
+    for (; i < argumentCount; i++) {
+        if (i >= methodBridge.argumentsType.count - 3 && isVariadic) break;
+        JDParameter *p = [methodBridge.argumentsType objectAtIndex:i + 2];
+        
+        ffi_type *ffiType;
+        if (p.encoding == JDEncodingStruct) {
+            ffiType = JDConvertStructToFFI(p.paramterName);
+        } else {
+            ffiType = JDConvertEncodingToFFI(p.encoding);
+        }
+        
+        ffiArgTypes[i + 2] = ffiType;
+        void *ffiArgPtr = alloca(ffiType->size);
+        JDSetJSValueToAddress(p.encoding, ctx, arguments[i], ffiArgPtr);
+        ffiArgs[i + 2] = ffiArgPtr;
+    }
+    
+    if (isVariadic) {
+        // 2. @SatanWoo:Deal With Variadic Arguments
+        ffi_type *ffiType = JDConvertEncodingToFFI(methodBridge.argumentsType.lastObject.encoding);
+        ffiArgTypes[argCount - 1] = &ffi_type_pointer; // base address
+        
+        void *ffiArgPtr = alloca(ffiType->size * (argumentCount - i)) ;
+        int offset = 0;
+        for (; i < argumentCount; i++) {
+            JDSetJSValueToAddress(methodBridge.argumentsType.lastObject.encoding, ctx, arguments[i], ffiArgPtr + offset * ffiType->size);
+            offset += 1;
+        }
+        ffiArgs[argCount - 1] = ffiArgPtr;
+    }
+    
+    /*for (int i = 0; i < argumentCount; i++) {
         @autoreleasepool {
-            JDParameter *p = [methodBridge.argumentsType objectAtIndex:i + 2];
+            JDParameter *p;
+            if (i >= methodBridge.argumentsType.count - 2 && isVariadic) {
+                p = methodBridge.argumentsType.lastObject;
+            } else {
+                p = [methodBridge.argumentsType objectAtIndex:i + 2];
+            }
+            
             ffi_type *ffiType;
+            
+            if (i >= methodBridge.argumentsType.count - 2 && isVariadic) {
+                ffiType = &ffi_type_pointer;
+            }
             
             if (p.encoding == JDEncodingStruct) {
                 ffiType = JDConvertStructToFFI(p.paramterName);
@@ -392,7 +455,11 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
             JDSetJSValueToAddress(p.encoding, ctx, arguments[i], ffiArgPtr);
             ffiArgs[i + 2] = ffiArgPtr;
         }
-    }
+    }*/
+    
+    
+    /*ffiArgTypes[argCount - 1] = &ffi_type_pointer;
+    ffiArgs[argCount - 1] = nil;*/
     
     ffi_type *returnType;
     if (methodBridge.returnType.encoding == JDEncodingStruct) {

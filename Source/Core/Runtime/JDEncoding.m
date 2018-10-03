@@ -99,6 +99,9 @@ size_t JDSizeOfEncoding(JDEncoding encoding, NSString *structName)
         JDSize(JDEncodingLongDouble, long double);
         JDSize(JDEncodingCString, char *);
         JDSize(JDEncodingPointer, void *);
+        JDSize(JDEncodingObject, void *);
+        JDSize(JDEncodingSEL, void *);
+        JDSize(JDEncodingClass, void *);
             
         case JDEncodingStruct:
         {

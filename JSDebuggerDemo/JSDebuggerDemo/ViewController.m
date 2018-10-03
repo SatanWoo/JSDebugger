@@ -24,6 +24,12 @@
     
     [[JDEngine engine] start];
     
+    NSArray *arr = [NSArray arrayWithObjects:@(1), @(2), @(3), nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[JDEngine engine] evaluateScriptAtPath:[[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"]];
+    });
+    
     self.testLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 100, 150, 50)];
     self.testLabel.text = @"Try JSDebugger!";
     self.testLabel.textColor = [UIColor orangeColor];
