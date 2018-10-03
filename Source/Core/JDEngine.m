@@ -87,7 +87,17 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
 {
     NSParameterAssert(scriptContent);
     if (scriptContent.length <= 0) { return; }
-    [self.context evaluateScript:scriptContent];
+    
+    JSValueRef exceptionValue = NULL;
+    JSStringRef jsContentRef = JSStringCreateWithUTF8CString(scriptContent.UTF8String);
+    
+    if (!JSCheckScriptSyntax(self.ctxRef, jsContentRef, NULL, 1, &exceptionValue)) {
+        JSStringRelease(jsContentRef);
+        return;
+    }
+    
+    JSEvaluateScript(self.ctxRef, jsContentRef, JSContextGetGlobalObject(self.ctxRef), NULL, 1, &exceptionValue);
+    JSStringRelease(jsContentRef);
 }
 
 - (void)evaluateScriptAtPath:(NSString *)path
