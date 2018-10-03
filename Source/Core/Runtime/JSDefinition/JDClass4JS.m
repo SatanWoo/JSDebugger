@@ -23,11 +23,13 @@ static JSValueRef JDClassGetProperty(JSContextRef ctx, JSObjectRef object, JSStr
     }
     
     SEL sel = NSSelectorFromString(JDFormatJSFunction(property));
-    if (!sel) {
+    Method m = class_getClassMethod(ocClass, sel);
+    if (!m) {
         CFRelease(ref);
         return JSValueMakeUndefined(ctx);
     }
     
+    CFRelease(ref);
     return JSObjectMake(ctx, JDMethod4JS(), (void *)sel);
 }
 
