@@ -6,7 +6,7 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 FOUNDATION_EXTERN NSString *JDFormatJSFunction(NSString *JSFunctionName);
 

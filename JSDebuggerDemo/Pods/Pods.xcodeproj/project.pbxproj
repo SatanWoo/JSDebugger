@@ -1,0 +1,855 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00B5F9F651CEE8941D3D1E6D0F0A692C /* JDIntrospect.h in Headers */ = {isa = PBXBuildFile; fileRef = 67490EEF18EFE816CD95C0FE2DFEA499 /* JDIntrospect.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		023EB75C80B1CCBEAE8D41AA22514EBA /* JDMethodBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD573F4989E89A2E03D7DBED7667501 /* JDMethodBridge.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0273F04FCD50459A4B7FF830D3587C0E /* JDEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AB510A9360707B0268B5B3F678726DF /* JDEncoding.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0C9181639999F0EDAFED022E01934549 /* JDClass4JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 05068264183893685CD96110147153B4 /* JDClass4JS.m */; };
+		0F98B5B1826EFF1B5644CFF4EC44EFBD /* JDPointer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CA4BEDEBF995900B30D9AE1070F11C /* JDPointer.m */; };
+		11F9D37112FA7A8D5D5A6CC7A4D33539 /* JDFormatJSFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A6DF792FA85198FB0ECFF115257300 /* JDFormatJSFunction.m */; };
+		1544E8299E9F04F8DA790B59F88EEB82 /* JDNSStringFromJSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCF93A273507F4E9A1B8432851A425 /* JDNSStringFromJSString.m */; };
+		1917893B0146221FF441894541C80F6A /* NSObject+JDRuntimeIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6E7868998DD34769B8828541339CF3 /* NSObject+JDRuntimeIntrospection.m */; };
+		204C23E14A05EA75FDFC3C528FAC17FA /* JDJSTypeToOCType.m in Sources */ = {isa = PBXBuildFile; fileRef = F25843BC8997236562801667DCF781B9 /* JDJSTypeToOCType.m */; };
+		2487DD068669A3057BE46EE493A9E250 /* libffi.a in Sources */ = {isa = PBXBuildFile; fileRef = 526A40AB9C942898CD9AF581D7F5E0DC /* libffi.a */; };
+		2681C43D42C41A7FA14B36B837F8A9DF /* JDClass4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D6C8CE9BDBC793DA3346988FCC46409 /* JDClass4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		29FF0DAFE8E35B1C0454952EA70887F9 /* JDStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = AA712D63D25C91B64531D11CEBA7C5A7 /* JDStruct.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B8FA2D3757AFF6EA5E0D4C5DA13EE5F /* ffitarget_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FE7B5B261CED2A9C035CA1AB37CFF43 /* ffitarget_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		443C1E980A1EC5BBDDA1406C05273714 /* JDEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = E96399CFF5278BE46D80ECBCC7DB1345 /* JDEngine.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		45413C4E72E64FEA3941463BE648224E /* JDPropertyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C151F023C26F88A875876EFD0E217F24 /* JDPropertyCache.m */; };
+		5415C88053C51E0615D57D3B3F8757D3 /* JDFormatJSFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4949972AD625A0B7C55A0BCAB1469964 /* JDFormatJSFunction.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5B1145F3D2E8AF2DBC7D54A291328C48 /* JDFFIContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B51465011B7671AFFDB265A041D8 /* JDFFIContext.m */; };
+		5E6ECFC0330ECCCD45A0E40C95F43101 /* JDPropertyCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF579BC33A5C71A1D967E70508535BD /* JDPropertyCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		614D6401657A5F2106388D606EB14939 /* NSDictionary+JSConvert.h in Headers */ = {isa = PBXBuildFile; fileRef = E606568471B5B61D06609E68D25D64FF /* NSDictionary+JSConvert.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6AC18490F20FEE18E7607D6432419BBB /* ffi_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 5356D94AE690EF989B9ED55F16755FF8 /* ffi_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6C3EBF6B95386135B5DA0254C544BEBE /* JDInstance4JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ED5A01D7096CC4086FF4642856AF99 /* JDInstance4JS.m */; };
+		6CA9FB0DF813DA6FA32B9120F79132A8 /* JDPointer4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F281125260EDF9C9F66DE2BDC0B69C2 /* JDPointer4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6E6AD8865DF8FF1D962E172FEEFFD9A7 /* ffi_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C72E76951E00877BFC84C2CCEFCC659 /* ffi_common.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		731CFCCACC5D5135E7B1D8247897C919 /* ffitarget_arm.h in Headers */ = {isa = PBXBuildFile; fileRef = 507B6719021DCD4A83933032FAB63AC4 /* ffitarget_arm.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C74B00EBE91DD4D05A789D47C546976 /* JDEnginePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E00362AF02C9B9313BC67F05E67D42 /* JDEnginePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CE86134D32DFD2EB1D2C7C6117A38A0 /* JDPointer.h in Headers */ = {isa = PBXBuildFile; fileRef = A12A6236004398B808B011175CA58F1A /* JDPointer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		82A3BA08166B42BED5C74C1F3E48565C /* JDLocalFileObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E5A18B86048B4AF6FDB54564793017 /* JDLocalFileObserver.m */; };
+		82D16229732F6286A731F480D851ACE0 /* JSDebugger.h in Headers */ = {isa = PBXBuildFile; fileRef = 154E6CA62E27DDC69C189B600E5312A7 /* JSDebugger.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8DF6C4D97A549B8C1F68A55AA1AB5D73 /* JDJSTypeToOCType.h in Headers */ = {isa = PBXBuildFile; fileRef = 7323A3CC07B394248E0C9944DF6D64CD /* JDJSTypeToOCType.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8EBC210FA92CB986F3223063D8BF09FE /* JDEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B59CB88ACC7C910C190F4A25FF07DA38 /* JDEngine.m */; };
+		9A91EE6C93B50D9AA11D6EA52C673738 /* JDChoose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E174898DF4FC9DDE6382FE2AABB5996 /* JDChoose.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A5173A332DB9DE72EE726ABDEEF9F3D3 /* NSObject+JDRuntimeIntrospection.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E28A39964D81B95D49BCB83DC08C2B /* NSObject+JDRuntimeIntrospection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AFCC5348656BC39A435C5532A49259A0 /* ffi_arm.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE070E5CDF8D0E78B9E0D23A0586492 /* ffi_arm.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B120389D1CE36B0A3FC97EEA5130BEF5 /* JDEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B78076B07F0E6813C50DC4DEAB442 /* JDEncoding.m */; };
+		B2A53F3CD32D70791AE7552308CEFC0A /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = A8527F251A61DF0A7794F782D445527E /* ffi_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B3AB631BE7B46DABB00563DC0C0870FF /* JDMethodBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8473B5E6DE4192CD68567F4A2DB216 /* JDMethodBridge.m */; };
+		B5709253A6A509CA961FBC725B9ABBF3 /* ffi_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = BEF81E0361DA3BE51B336755BC21DB55 /* ffi_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B7651508E95E09FF6E37FCBD16165551 /* JDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7AC66ED496DE9B047507B7BFD1873 /* JDProperty.m */; };
+		BF172921F540E6A9D86A011D041DBAE2 /* NSDictionary+JSConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B42A33634CC3D97E3616E5C4B11388 /* NSDictionary+JSConvert.m */; };
+		C2B98529A1A705F3051C38D40A37CAA3 /* ffitarget_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 103214CB6C0284918AF9499D8FE7A4CE /* ffitarget_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C31A947315F020E037B326ACA41B791A /* JDFunctionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1192425685A964E310B57936082FC8 /* JDFunctionPlugin.m */; };
+		C513AEE93E780B7B5443105DB45BAE37 /* JDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CAE51A3096C7973BC2C6F854478F2A /* JDLog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C61FCA73BE844EA2EB983CA4A342F71F /* JDStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2B7A5049FC544CFCE5D2D1FDE5B6F /* JDStruct.m */; };
+		CD51623A27926634F6D6C3C89C67F693 /* JDInstance4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CD1B52C93BC6BF2B3C771D1CC083E3A /* JDInstance4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CD6749E0B49E78BB81E4DD8F7B0210E0 /* JDChoose.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F2BD2A91B036D6D4C1F1FE5C8F9337B /* JDChoose.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D22CDED3AD66ABA6B2EA42123C6A2DF8 /* ffi.h in Headers */ = {isa = PBXBuildFile; fileRef = 3387FC86FB8682AA7BAD62EDE3243FBE /* ffi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D25A5B1574D6703E6B3A63C60CDF0681 /* JDProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 662A4D39456A3B10FFAF11B75C31C625 /* JDProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D2A4263DEF5C25BF508AD3426DD7EE98 /* JDNSStringFromJSString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9059738AC56960FC6F1AD4BE79990A61 /* JDNSStringFromJSString.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D5EB75A0950D869FB564FA94367BF22E /* JDFunctionPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = CFC4EA81E76404A70645F1F1F562FB47 /* JDFunctionPlugin.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D98D982CABFE2ED8CF2C2D0825991502 /* JDOCTypeToJSType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC38C9838BC8F893AEB13058CE3862E /* JDOCTypeToJSType.m */; };
+		DA0FA5A8305820A871E1EF82F09A8065 /* JDFFIContext.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C224674D993E9B69DDE982B4888107 /* JDFFIContext.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DC8A61423901A36E33914695ADBF54AD /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B315118F59CCCB14229A53A14911591 /* JavaScriptCore.framework */; };
+		DF8572A332532B6BF7C64525A6F1A55B /* JDLocalFileObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C7247464F54617A4E7D216C5AD17C253 /* JDLocalFileObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E2F4B75617B3567D75A5E0A3F96E2118 /* Pods-JSDebuggerDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B1A5D680C445A834187F458F263A4 /* Pods-JSDebuggerDemo-dummy.m */; };
+		E4418E3B8FF82DD5E0DA5E22DF1CB92D /* ffitarget_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = BD02121C310D9902FA88F846BAF76B09 /* ffitarget_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E4BFBCF4236C3F76457361F42DC44395 /* JDIntrospect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23E56AF5875F1F443707A36E0F152E13 /* JDIntrospect.mm */; };
+		E63EFFFF94C3706EF3E162B930519643 /* JDMethod4JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 565ED6C66A44D49B02E905FBC7C5B55C /* JDMethod4JS.m */; };
+		E89327ACA4F4097DA968434FD5EF2247 /* JSDebugger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A62917FAC82DC3E5C3FA9DB5A9E1ECF2 /* JSDebugger-dummy.m */; };
+		ED0BDA79AD2D8CD9EC62378BA542A734 /* JDPointer4JS.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0B7F817FBE53BB1DD26C45D477517E /* JDPointer4JS.m */; };
+		EF760EA2DC36CB23145E3B1B75299E8F /* JDOCTypeToJSType.h in Headers */ = {isa = PBXBuildFile; fileRef = F916FE9B973C2B963C7D76C2659EE11C /* JDOCTypeToJSType.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F34620A3CA36C367AF93508BDB55AEBE /* ffitarget.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DE0F430EB237953A382F1D15DE85D2 /* ffitarget.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F864E2360990FD722E610075B25C4071 /* JSDebugger.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = E67B890D0E1411BE5FE68039214EDE02 /* JSDebugger.modulemap */; };
+		F86BED52E44F60B8DF9E912F3110393E /* JDMethod4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = 154555E37B3E39B8322DC6B157212481 /* JDMethod4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E85F475B76CC5B04C67361352BE6286E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5194DD1D6DD54D77B7665F39BE678C68;
+			remoteInfo = JSDebugger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011C9FE69F5659C9D39C05E81D6AC616 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		05068264183893685CD96110147153B4 /* JDClass4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDClass4JS.m; sourceTree = "<group>"; };
+		0AF579BC33A5C71A1D967E70508535BD /* JDPropertyCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDPropertyCache.h; sourceTree = "<group>"; };
+		0C1F8996782B0FBD09184874114500D2 /* libPods-JSDebuggerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JSDebuggerDemo.a"; path = "libPods-JSDebuggerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D6C8CE9BDBC793DA3346988FCC46409 /* JDClass4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDClass4JS.h; sourceTree = "<group>"; };
+		103214CB6C0284918AF9499D8FE7A4CE /* ffitarget_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
+		130DCB3C87F78F182EDFE6CC553A7949 /* JSDebugger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSDebugger-prefix.pch"; sourceTree = "<group>"; };
+		14ED5A01D7096CC4086FF4642856AF99 /* JDInstance4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDInstance4JS.m; sourceTree = "<group>"; };
+		154555E37B3E39B8322DC6B157212481 /* JDMethod4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDMethod4JS.h; sourceTree = "<group>"; };
+		154E6CA62E27DDC69C189B600E5312A7 /* JSDebugger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSDebugger.h; path = Source/JSDebugger.h; sourceTree = "<group>"; };
+		16E7AC66ED496DE9B047507B7BFD1873 /* JDProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDProperty.m; sourceTree = "<group>"; };
+		1F8473B5E6DE4192CD68567F4A2DB216 /* JDMethodBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDMethodBridge.m; sourceTree = "<group>"; };
+		20CAE51A3096C7973BC2C6F854478F2A /* JDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDLog.h; sourceTree = "<group>"; };
+		23E56AF5875F1F443707A36E0F152E13 /* JDIntrospect.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = JDIntrospect.mm; sourceTree = "<group>"; };
+		2CE2B7A5049FC544CFCE5D2D1FDE5B6F /* JDStruct.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDStruct.m; sourceTree = "<group>"; };
+		2F2BD2A91B036D6D4C1F1FE5C8F9337B /* JDChoose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDChoose.h; sourceTree = "<group>"; };
+		2FE7B5B261CED2A9C035CA1AB37CFF43 /* ffitarget_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm64.h; sourceTree = "<group>"; };
+		3387FC86FB8682AA7BAD62EDE3243FBE /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi.h; sourceTree = "<group>"; };
+		360A53EECC187F7F41224710F8FF1BC2 /* Pods-JSDebuggerDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSDebuggerDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3B315118F59CCCB14229A53A14911591 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		3C72E76951E00877BFC84C2CCEFCC659 /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_common.h; sourceTree = "<group>"; };
+		4949972AD625A0B7C55A0BCAB1469964 /* JDFormatJSFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDFormatJSFunction.h; sourceTree = "<group>"; };
+		4BCCF93A273507F4E9A1B8432851A425 /* JDNSStringFromJSString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDNSStringFromJSString.m; sourceTree = "<group>"; };
+		507B6719021DCD4A83933032FAB63AC4 /* ffitarget_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm.h; sourceTree = "<group>"; };
+		526A40AB9C942898CD9AF581D7F5E0DC /* libffi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
+		5356D94AE690EF989B9ED55F16755FF8 /* ffi_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_x86_64.h; sourceTree = "<group>"; };
+		565ED6C66A44D49B02E905FBC7C5B55C /* JDMethod4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDMethod4JS.m; sourceTree = "<group>"; };
+		585B78076B07F0E6813C50DC4DEAB442 /* JDEncoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDEncoding.m; sourceTree = "<group>"; };
+		5AB510A9360707B0268B5B3F678726DF /* JDEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDEncoding.h; sourceTree = "<group>"; };
+		5E174898DF4FC9DDE6382FE2AABB5996 /* JDChoose.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = JDChoose.mm; path = Source/Core/Plugin/Plugin/JDChoose.mm; sourceTree = "<group>"; };
+		662A4D39456A3B10FFAF11B75C31C625 /* JDProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDProperty.h; sourceTree = "<group>"; };
+		67490EEF18EFE816CD95C0FE2DFEA499 /* JDIntrospect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDIntrospect.h; sourceTree = "<group>"; };
+		69E00362AF02C9B9313BC67F05E67D42 /* JDEnginePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDEnginePrivate.h; sourceTree = "<group>"; };
+		6D1192425685A964E310B57936082FC8 /* JDFunctionPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDFunctionPlugin.m; sourceTree = "<group>"; };
+		7323A3CC07B394248E0C9944DF6D64CD /* JDJSTypeToOCType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDJSTypeToOCType.h; sourceTree = "<group>"; };
+		73A6DF792FA85198FB0ECFF115257300 /* JDFormatJSFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDFormatJSFunction.m; sourceTree = "<group>"; };
+		7AD573F4989E89A2E03D7DBED7667501 /* JDMethodBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDMethodBridge.h; sourceTree = "<group>"; };
+		7D6D375509E7FD166711465C8977E177 /* libJSDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJSDebugger.a; path = libJSDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A3824CF7C6CC5D4D50AE0D4C022DBA /* Pods-JSDebuggerDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JSDebuggerDemo-frameworks.sh"; sourceTree = "<group>"; };
+		86E5A18B86048B4AF6FDB54564793017 /* JDLocalFileObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDLocalFileObserver.m; sourceTree = "<group>"; };
+		8CD1B52C93BC6BF2B3C771D1CC083E3A /* JDInstance4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDInstance4JS.h; sourceTree = "<group>"; };
+		9059738AC56960FC6F1AD4BE79990A61 /* JDNSStringFromJSString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDNSStringFromJSString.h; sourceTree = "<group>"; };
+		90CA4BEDEBF995900B30D9AE1070F11C /* JDPointer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDPointer.m; sourceTree = "<group>"; };
+		917B1A5D680C445A834187F458F263A4 /* Pods-JSDebuggerDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSDebuggerDemo-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98B42A33634CC3D97E3616E5C4B11388 /* NSDictionary+JSConvert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSConvert.m"; sourceTree = "<group>"; };
+		990691ED86E790615B8F9FD254CD8DD7 /* Pods-JSDebuggerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSDebuggerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9F281125260EDF9C9F66DE2BDC0B69C2 /* JDPointer4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDPointer4JS.h; sourceTree = "<group>"; };
+		9F8B18D41A0037B5DA7494D7F7B02A83 /* JSDebugger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JSDebugger.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A12A6236004398B808B011175CA58F1A /* JDPointer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDPointer.h; sourceTree = "<group>"; };
+		A62917FAC82DC3E5C3FA9DB5A9E1ECF2 /* JSDebugger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSDebugger-dummy.m"; sourceTree = "<group>"; };
+		A8527F251A61DF0A7794F782D445527E /* ffi_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
+		AA712D63D25C91B64531D11CEBA7C5A7 /* JDStruct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDStruct.h; sourceTree = "<group>"; };
+		AB72DC292BDBB8914CAE0F0547BD0755 /* Pods-JSDebuggerDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JSDebuggerDemo-resources.sh"; sourceTree = "<group>"; };
+		AE0B7F817FBE53BB1DD26C45D477517E /* JDPointer4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDPointer4JS.m; sourceTree = "<group>"; };
+		B59CB88ACC7C910C190F4A25FF07DA38 /* JDEngine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDEngine.m; sourceTree = "<group>"; };
+		BD02121C310D9902FA88F846BAF76B09 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
+		BD6E7868998DD34769B8828541339CF3 /* NSObject+JDRuntimeIntrospection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JDRuntimeIntrospection.m"; sourceTree = "<group>"; };
+		BEF81E0361DA3BE51B336755BC21DB55 /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
+		C151F023C26F88A875876EFD0E217F24 /* JDPropertyCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDPropertyCache.m; sourceTree = "<group>"; };
+		C7247464F54617A4E7D216C5AD17C253 /* JDLocalFileObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDLocalFileObserver.h; sourceTree = "<group>"; };
+		CFC4EA81E76404A70645F1F1F562FB47 /* JDFunctionPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDFunctionPlugin.h; sourceTree = "<group>"; };
+		CFE070E5CDF8D0E78B9E0D23A0586492 /* ffi_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_arm.h; sourceTree = "<group>"; };
+		D5E28A39964D81B95D49BCB83DC08C2B /* NSObject+JDRuntimeIntrospection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+JDRuntimeIntrospection.h"; sourceTree = "<group>"; };
+		DA732EB7766140E3222B8BB8FB647C27 /* Pods-JSDebuggerDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSDebuggerDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		E5328AD98644E6B4E0D0473FFA5E8006 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E606568471B5B61D06609E68D25D64FF /* NSDictionary+JSConvert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSConvert.h"; sourceTree = "<group>"; };
+		E67B890D0E1411BE5FE68039214EDE02 /* JSDebugger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = JSDebugger.modulemap; path = Source/JSDebugger.modulemap; sourceTree = "<group>"; };
+		E96399CFF5278BE46D80ECBCC7DB1345 /* JDEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDEngine.h; sourceTree = "<group>"; };
+		EDC38C9838BC8F893AEB13058CE3862E /* JDOCTypeToJSType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDOCTypeToJSType.m; sourceTree = "<group>"; };
+		F25843BC8997236562801667DCF781B9 /* JDJSTypeToOCType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDJSTypeToOCType.m; sourceTree = "<group>"; };
+		F339B51465011B7671AFFDB265A041D8 /* JDFFIContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDFFIContext.m; sourceTree = "<group>"; };
+		F5DE0F430EB237953A382F1D15DE85D2 /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget.h; sourceTree = "<group>"; };
+		F7C224674D993E9B69DDE982B4888107 /* JDFFIContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDFFIContext.h; sourceTree = "<group>"; };
+		F916FE9B973C2B963C7D76C2659EE11C /* JDOCTypeToJSType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDOCTypeToJSType.h; sourceTree = "<group>"; };
+		FD11624C2A43EADB21F2D602D9DF75C0 /* JSDebugger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSDebugger.xcconfig; sourceTree = "<group>"; };
+		FDFFDFE54F53738E663F8C05A20D92E0 /* Pods-JSDebuggerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSDebuggerDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		207B315B7CDF2CFA8D7621283B4A053F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCA91D2BD3E5C82C0AC2B38A610A6E11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC8A61423901A36E33914695ADBF54AD /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BB43C685C9B6C58BBA91768C7298B4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D6D375509E7FD166711465C8977E177 /* libJSDebugger.a */,
+				0C1F8996782B0FBD09184874114500D2 /* libPods-JSDebuggerDemo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		104AD3EAF695228750D908D6E6B7A31C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				20455FD78C53D3B7361F3F4FE049D595 /* Pods-JSDebuggerDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		20455FD78C53D3B7361F3F4FE049D595 /* Pods-JSDebuggerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				360A53EECC187F7F41224710F8FF1BC2 /* Pods-JSDebuggerDemo-acknowledgements.markdown */,
+				DA732EB7766140E3222B8BB8FB647C27 /* Pods-JSDebuggerDemo-acknowledgements.plist */,
+				917B1A5D680C445A834187F458F263A4 /* Pods-JSDebuggerDemo-dummy.m */,
+				85A3824CF7C6CC5D4D50AE0D4C022DBA /* Pods-JSDebuggerDemo-frameworks.sh */,
+				AB72DC292BDBB8914CAE0F0547BD0755 /* Pods-JSDebuggerDemo-resources.sh */,
+				990691ED86E790615B8F9FD254CD8DD7 /* Pods-JSDebuggerDemo.debug.xcconfig */,
+				FDFFDFE54F53738E663F8C05A20D92E0 /* Pods-JSDebuggerDemo.release.xcconfig */,
+			);
+			name = "Pods-JSDebuggerDemo";
+			path = "Target Support Files/Pods-JSDebuggerDemo";
+			sourceTree = "<group>";
+		};
+		23DF0B5FFE6EF87884E16C6A61A17EDC /* JSDefinition */ = {
+			isa = PBXGroup;
+			children = (
+				0D6C8CE9BDBC793DA3346988FCC46409 /* JDClass4JS.h */,
+				05068264183893685CD96110147153B4 /* JDClass4JS.m */,
+				8CD1B52C93BC6BF2B3C771D1CC083E3A /* JDInstance4JS.h */,
+				14ED5A01D7096CC4086FF4642856AF99 /* JDInstance4JS.m */,
+				154555E37B3E39B8322DC6B157212481 /* JDMethod4JS.h */,
+				565ED6C66A44D49B02E905FBC7C5B55C /* JDMethod4JS.m */,
+				9F281125260EDF9C9F66DE2BDC0B69C2 /* JDPointer4JS.h */,
+				AE0B7F817FBE53BB1DD26C45D477517E /* JDPointer4JS.m */,
+			);
+			name = JSDefinition;
+			path = JSDefinition;
+			sourceTree = "<group>";
+		};
+		3AB3FB907A8307930F143C3C47BFCB07 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				5AB510A9360707B0268B5B3F678726DF /* JDEncoding.h */,
+				585B78076B07F0E6813C50DC4DEAB442 /* JDEncoding.m */,
+				7323A3CC07B394248E0C9944DF6D64CD /* JDJSTypeToOCType.h */,
+				F25843BC8997236562801667DCF781B9 /* JDJSTypeToOCType.m */,
+				7AD573F4989E89A2E03D7DBED7667501 /* JDMethodBridge.h */,
+				1F8473B5E6DE4192CD68567F4A2DB216 /* JDMethodBridge.m */,
+				F916FE9B973C2B963C7D76C2659EE11C /* JDOCTypeToJSType.h */,
+				EDC38C9838BC8F893AEB13058CE3862E /* JDOCTypeToJSType.m */,
+				A12A6236004398B808B011175CA58F1A /* JDPointer.h */,
+				90CA4BEDEBF995900B30D9AE1070F11C /* JDPointer.m */,
+				662A4D39456A3B10FFAF11B75C31C625 /* JDProperty.h */,
+				16E7AC66ED496DE9B047507B7BFD1873 /* JDProperty.m */,
+				0AF579BC33A5C71A1D967E70508535BD /* JDPropertyCache.h */,
+				C151F023C26F88A875876EFD0E217F24 /* JDPropertyCache.m */,
+				AA712D63D25C91B64531D11CEBA7C5A7 /* JDStruct.h */,
+				2CE2B7A5049FC544CFCE5D2D1FDE5B6F /* JDStruct.m */,
+				23DF0B5FFE6EF87884E16C6A61A17EDC /* JSDefinition */,
+			);
+			name = Runtime;
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		482FA2D8B84B685F7B9F7D1755EBE864 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F671416140EC6C0EFF5601EC274A6EA7 /* JSDebugger */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		574421C660AD2108A93C458EB34C133C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3B315118F59CCCB14229A53A14911591 /* JavaScriptCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		58B6CCEBD2022920C82FD9BD0750355D /* no-arc */ = {
+			isa = PBXGroup;
+			children = (
+				5E174898DF4FC9DDE6382FE2AABB5996 /* JDChoose.mm */,
+			);
+			name = "no-arc";
+			sourceTree = "<group>";
+		};
+		78FD959E6EFC19FD0B6ACC88413F74AB /* FFI */ = {
+			isa = PBXGroup;
+			children = (
+				F7C224674D993E9B69DDE982B4888107 /* JDFFIContext.h */,
+				F339B51465011B7671AFFDB265A041D8 /* JDFFIContext.m */,
+				B00289D8D250BB017042C9B2E17F4B16 /* Vendor */,
+			);
+			name = FFI;
+			path = FFI;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				482FA2D8B84B685F7B9F7D1755EBE864 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				0BB43C685C9B6C58BBA91768C7298B4F /* Products */,
+				104AD3EAF695228750D908D6E6B7A31C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F9FCA650A545DE4F9887A0CB5FA8762 /* FileWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				C7247464F54617A4E7D216C5AD17C253 /* JDLocalFileObserver.h */,
+				86E5A18B86048B4AF6FDB54564793017 /* JDLocalFileObserver.m */,
+			);
+			name = FileWatcher;
+			path = Source/FileWatcher;
+			sourceTree = "<group>";
+		};
+		A697E3C7D73A304B2A32F4144577059C /* Introspect */ = {
+			isa = PBXGroup;
+			children = (
+				D5E28A39964D81B95D49BCB83DC08C2B /* NSObject+JDRuntimeIntrospection.h */,
+				BD6E7868998DD34769B8828541339CF3 /* NSObject+JDRuntimeIntrospection.m */,
+			);
+			name = Introspect;
+			path = Introspect;
+			sourceTree = "<group>";
+		};
+		B00289D8D250BB017042C9B2E17F4B16 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3387FC86FB8682AA7BAD62EDE3243FBE /* ffi.h */,
+				CFE070E5CDF8D0E78B9E0D23A0586492 /* ffi_arm.h */,
+				A8527F251A61DF0A7794F782D445527E /* ffi_arm64.h */,
+				3C72E76951E00877BFC84C2CCEFCC659 /* ffi_common.h */,
+				BEF81E0361DA3BE51B336755BC21DB55 /* ffi_i386.h */,
+				5356D94AE690EF989B9ED55F16755FF8 /* ffi_x86_64.h */,
+				F5DE0F430EB237953A382F1D15DE85D2 /* ffitarget.h */,
+				507B6719021DCD4A83933032FAB63AC4 /* ffitarget_arm.h */,
+				2FE7B5B261CED2A9C035CA1AB37CFF43 /* ffitarget_arm64.h */,
+				BD02121C310D9902FA88F846BAF76B09 /* ffitarget_i386.h */,
+				103214CB6C0284918AF9499D8FE7A4CE /* ffitarget_x86_64.h */,
+				526A40AB9C942898CD9AF581D7F5E0DC /* libffi.a */,
+			);
+			name = Vendor;
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				574421C660AD2108A93C458EB34C133C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFE4DD9CCAF8CE7C35B30EFD2E0E48D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5E3A70CACD3816ADC0CD367DE783EB3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD11624C2A43EADB21F2D602D9DF75C0 /* JSDebugger.xcconfig */,
+				A62917FAC82DC3E5C3FA9DB5A9E1ECF2 /* JSDebugger-dummy.m */,
+				130DCB3C87F78F182EDFE6CC553A7949 /* JSDebugger-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "JSDebuggerDemo/Pods/Target Support Files/JSDebugger";
+			sourceTree = "<group>";
+		};
+		CF043E7F685F1A78DA7EB303E1B7535C /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				CFC4EA81E76404A70645F1F1F562FB47 /* JDFunctionPlugin.h */,
+				6D1192425685A964E310B57936082FC8 /* JDFunctionPlugin.m */,
+				E16DD3E621219E7497369B81CD972897 /* Plugin */,
+			);
+			name = Plugin;
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		CF8AC659762BF2995CA3FDB9F54B28D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4949972AD625A0B7C55A0BCAB1469964 /* JDFormatJSFunction.h */,
+				73A6DF792FA85198FB0ECFF115257300 /* JDFormatJSFunction.m */,
+				9059738AC56960FC6F1AD4BE79990A61 /* JDNSStringFromJSString.h */,
+				4BCCF93A273507F4E9A1B8432851A425 /* JDNSStringFromJSString.m */,
+				E606568471B5B61D06609E68D25D64FF /* NSDictionary+JSConvert.h */,
+				98B42A33634CC3D97E3616E5C4B11388 /* NSDictionary+JSConvert.m */,
+			);
+			name = Util;
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E16DD3E621219E7497369B81CD972897 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				2F2BD2A91B036D6D4C1F1FE5C8F9337B /* JDChoose.h */,
+				67490EEF18EFE816CD95C0FE2DFEA499 /* JDIntrospect.h */,
+				23E56AF5875F1F443707A36E0F152E13 /* JDIntrospect.mm */,
+			);
+			name = Plugin;
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		E5EC2986E2B844BB9D569E0AB673477C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B18D41A0037B5DA7494D7F7B02A83 /* JSDebugger.podspec */,
+				E5328AD98644E6B4E0D0473FFA5E8006 /* LICENSE */,
+				011C9FE69F5659C9D39C05E81D6AC616 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F2A95D153090CD76082F8A507ADC9231 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E96399CFF5278BE46D80ECBCC7DB1345 /* JDEngine.h */,
+				B59CB88ACC7C910C190F4A25FF07DA38 /* JDEngine.m */,
+				69E00362AF02C9B9313BC67F05E67D42 /* JDEnginePrivate.h */,
+				20CAE51A3096C7973BC2C6F854478F2A /* JDLog.h */,
+				78FD959E6EFC19FD0B6ACC88413F74AB /* FFI */,
+				A697E3C7D73A304B2A32F4144577059C /* Introspect */,
+				CF043E7F685F1A78DA7EB303E1B7535C /* Plugin */,
+				3AB3FB907A8307930F143C3C47BFCB07 /* Runtime */,
+				CF8AC659762BF2995CA3FDB9F54B28D8 /* Util */,
+			);
+			name = Core;
+			path = Source/Core;
+			sourceTree = "<group>";
+		};
+		F671416140EC6C0EFF5601EC274A6EA7 /* JSDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				154E6CA62E27DDC69C189B600E5312A7 /* JSDebugger.h */,
+				E67B890D0E1411BE5FE68039214EDE02 /* JSDebugger.modulemap */,
+				F2A95D153090CD76082F8A507ADC9231 /* Core */,
+				7F9FCA650A545DE4F9887A0CB5FA8762 /* FileWatcher */,
+				BFE4DD9CCAF8CE7C35B30EFD2E0E48D0 /* Frameworks */,
+				58B6CCEBD2022920C82FD9BD0750355D /* no-arc */,
+				E5EC2986E2B844BB9D569E0AB673477C /* Pod */,
+				C5E3A70CACD3816ADC0CD367DE783EB3 /* Support Files */,
+			);
+			name = JSDebugger;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D29DFEA47302EE83ADCE0F2DBD9AB9ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D22CDED3AD66ABA6B2EA42123C6A2DF8 /* ffi.h in Headers */,
+				AFCC5348656BC39A435C5532A49259A0 /* ffi_arm.h in Headers */,
+				B2A53F3CD32D70791AE7552308CEFC0A /* ffi_arm64.h in Headers */,
+				6E6AD8865DF8FF1D962E172FEEFFD9A7 /* ffi_common.h in Headers */,
+				B5709253A6A509CA961FBC725B9ABBF3 /* ffi_i386.h in Headers */,
+				6AC18490F20FEE18E7607D6432419BBB /* ffi_x86_64.h in Headers */,
+				F34620A3CA36C367AF93508BDB55AEBE /* ffitarget.h in Headers */,
+				731CFCCACC5D5135E7B1D8247897C919 /* ffitarget_arm.h in Headers */,
+				2B8FA2D3757AFF6EA5E0D4C5DA13EE5F /* ffitarget_arm64.h in Headers */,
+				E4418E3B8FF82DD5E0DA5E22DF1CB92D /* ffitarget_i386.h in Headers */,
+				C2B98529A1A705F3051C38D40A37CAA3 /* ffitarget_x86_64.h in Headers */,
+				CD6749E0B49E78BB81E4DD8F7B0210E0 /* JDChoose.h in Headers */,
+				2681C43D42C41A7FA14B36B837F8A9DF /* JDClass4JS.h in Headers */,
+				0273F04FCD50459A4B7FF830D3587C0E /* JDEncoding.h in Headers */,
+				443C1E980A1EC5BBDDA1406C05273714 /* JDEngine.h in Headers */,
+				7C74B00EBE91DD4D05A789D47C546976 /* JDEnginePrivate.h in Headers */,
+				DA0FA5A8305820A871E1EF82F09A8065 /* JDFFIContext.h in Headers */,
+				5415C88053C51E0615D57D3B3F8757D3 /* JDFormatJSFunction.h in Headers */,
+				D5EB75A0950D869FB564FA94367BF22E /* JDFunctionPlugin.h in Headers */,
+				CD51623A27926634F6D6C3C89C67F693 /* JDInstance4JS.h in Headers */,
+				00B5F9F651CEE8941D3D1E6D0F0A692C /* JDIntrospect.h in Headers */,
+				8DF6C4D97A549B8C1F68A55AA1AB5D73 /* JDJSTypeToOCType.h in Headers */,
+				DF8572A332532B6BF7C64525A6F1A55B /* JDLocalFileObserver.h in Headers */,
+				C513AEE93E780B7B5443105DB45BAE37 /* JDLog.h in Headers */,
+				F86BED52E44F60B8DF9E912F3110393E /* JDMethod4JS.h in Headers */,
+				023EB75C80B1CCBEAE8D41AA22514EBA /* JDMethodBridge.h in Headers */,
+				D2A4263DEF5C25BF508AD3426DD7EE98 /* JDNSStringFromJSString.h in Headers */,
+				EF760EA2DC36CB23145E3B1B75299E8F /* JDOCTypeToJSType.h in Headers */,
+				7CE86134D32DFD2EB1D2C7C6117A38A0 /* JDPointer.h in Headers */,
+				6CA9FB0DF813DA6FA32B9120F79132A8 /* JDPointer4JS.h in Headers */,
+				D25A5B1574D6703E6B3A63C60CDF0681 /* JDProperty.h in Headers */,
+				5E6ECFC0330ECCCD45A0E40C95F43101 /* JDPropertyCache.h in Headers */,
+				29FF0DAFE8E35B1C0454952EA70887F9 /* JDStruct.h in Headers */,
+				82D16229732F6286A731F480D851ACE0 /* JSDebugger.h in Headers */,
+				614D6401657A5F2106388D606EB14939 /* NSDictionary+JSConvert.h in Headers */,
+				A5173A332DB9DE72EE726ABDEEF9F3D3 /* NSObject+JDRuntimeIntrospection.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2D07B74B2B1AD42B9C4ABF7E10EBC352 /* Pods-JSDebuggerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 151BA1F3F8AFFB6440C97E6C29E171D8 /* Build configuration list for PBXNativeTarget "Pods-JSDebuggerDemo" */;
+			buildPhases = (
+				44172DBFB8B2C58E08BAED8E7CF2906F /* Sources */,
+				207B315B7CDF2CFA8D7621283B4A053F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A81302AFDFAFF7BE2F590B7C966BC540 /* PBXTargetDependency */,
+			);
+			name = "Pods-JSDebuggerDemo";
+			productName = "Pods-JSDebuggerDemo";
+			productReference = 0C1F8996782B0FBD09184874114500D2 /* libPods-JSDebuggerDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5194DD1D6DD54D77B7665F39BE678C68 /* JSDebugger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8977B38D94C53061B87CF2755CDCC52C /* Build configuration list for PBXNativeTarget "JSDebugger" */;
+			buildPhases = (
+				087A3654EF790459EB866D0B2918EE15 /* Sources */,
+				CCA91D2BD3E5C82C0AC2B38A610A6E11 /* Frameworks */,
+				D29DFEA47302EE83ADCE0F2DBD9AB9ED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSDebugger;
+			productName = JSDebugger;
+			productReference = 7D6D375509E7FD166711465C8977E177 /* libJSDebugger.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0BB43C685C9B6C58BBA91768C7298B4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5194DD1D6DD54D77B7665F39BE678C68 /* JSDebugger */,
+				2D07B74B2B1AD42B9C4ABF7E10EBC352 /* Pods-JSDebuggerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		087A3654EF790459EB866D0B2918EE15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A91EE6C93B50D9AA11D6EA52C673738 /* JDChoose.mm in Sources */,
+				0C9181639999F0EDAFED022E01934549 /* JDClass4JS.m in Sources */,
+				B120389D1CE36B0A3FC97EEA5130BEF5 /* JDEncoding.m in Sources */,
+				8EBC210FA92CB986F3223063D8BF09FE /* JDEngine.m in Sources */,
+				5B1145F3D2E8AF2DBC7D54A291328C48 /* JDFFIContext.m in Sources */,
+				11F9D37112FA7A8D5D5A6CC7A4D33539 /* JDFormatJSFunction.m in Sources */,
+				C31A947315F020E037B326ACA41B791A /* JDFunctionPlugin.m in Sources */,
+				6C3EBF6B95386135B5DA0254C544BEBE /* JDInstance4JS.m in Sources */,
+				E4BFBCF4236C3F76457361F42DC44395 /* JDIntrospect.mm in Sources */,
+				204C23E14A05EA75FDFC3C528FAC17FA /* JDJSTypeToOCType.m in Sources */,
+				82A3BA08166B42BED5C74C1F3E48565C /* JDLocalFileObserver.m in Sources */,
+				E63EFFFF94C3706EF3E162B930519643 /* JDMethod4JS.m in Sources */,
+				B3AB631BE7B46DABB00563DC0C0870FF /* JDMethodBridge.m in Sources */,
+				1544E8299E9F04F8DA790B59F88EEB82 /* JDNSStringFromJSString.m in Sources */,
+				D98D982CABFE2ED8CF2C2D0825991502 /* JDOCTypeToJSType.m in Sources */,
+				0F98B5B1826EFF1B5644CFF4EC44EFBD /* JDPointer.m in Sources */,
+				ED0BDA79AD2D8CD9EC62378BA542A734 /* JDPointer4JS.m in Sources */,
+				B7651508E95E09FF6E37FCBD16165551 /* JDProperty.m in Sources */,
+				45413C4E72E64FEA3941463BE648224E /* JDPropertyCache.m in Sources */,
+				C61FCA73BE844EA2EB983CA4A342F71F /* JDStruct.m in Sources */,
+				E89327ACA4F4097DA968434FD5EF2247 /* JSDebugger-dummy.m in Sources */,
+				F864E2360990FD722E610075B25C4071 /* JSDebugger.modulemap in Sources */,
+				2487DD068669A3057BE46EE493A9E250 /* libffi.a in Sources */,
+				BF172921F540E6A9D86A011D041DBAE2 /* NSDictionary+JSConvert.m in Sources */,
+				1917893B0146221FF441894541C80F6A /* NSObject+JDRuntimeIntrospection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44172DBFB8B2C58E08BAED8E7CF2906F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2F4B75617B3567D75A5E0A3F96E2118 /* Pods-JSDebuggerDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A81302AFDFAFF7BE2F590B7C966BC540 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSDebugger;
+			target = 5194DD1D6DD54D77B7665F39BE678C68 /* JSDebugger */;
+			targetProxy = E85F475B76CC5B04C67361352BE6286E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		045D02E02BE0C2D2F51E4F07DD772900 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD11624C2A43EADB21F2D602D9DF75C0 /* JSDebugger.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/JSDebugger/JSDebugger-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = JSDebugger;
+				PRODUCT_NAME = JSDebugger;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		51F32A72238D5FF439C2799714CA9C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990691ED86E790615B8F9FD254CD8DD7 /* Pods-JSDebuggerDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBCF68C623D792257EA2010F9D9812C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDFFDFE54F53738E663F8C05A20D92E0 /* Pods-JSDebuggerDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D56C3BD973FD4E98E2FA2B764834EF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD11624C2A43EADB21F2D602D9DF75C0 /* JSDebugger.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/JSDebugger/JSDebugger-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = JSDebugger;
+				PRODUCT_NAME = JSDebugger;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		151BA1F3F8AFFB6440C97E6C29E171D8 /* Build configuration list for PBXNativeTarget "Pods-JSDebuggerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51F32A72238D5FF439C2799714CA9C90 /* Debug */,
+				BBCF68C623D792257EA2010F9D9812C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8977B38D94C53061B87CF2755CDCC52C /* Build configuration list for PBXNativeTarget "JSDebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045D02E02BE0C2D2F51E4F07DD772900 /* Debug */,
+				D56C3BD973FD4E98E2FA2B764834EF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

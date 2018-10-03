@@ -6,9 +6,10 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 #import "JDEncoding.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface JDProperty : NSObject
 
@@ -20,16 +21,19 @@
 @property (nonatomic, copy, readonly) NSString *propertyName;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithProperty:(objc_property_t)property;
++ (instancetype)new NS_UNAVAILABLE;
+- (nullable instancetype)initWithProperty:(objc_property_t)property NS_DESIGNATED_INITIALIZER;
 
 @end
-
 
 @interface JDPropertiesInClass : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithClass:(Class)cls;
++ (instancetype)new NS_UNAVAILABLE;
+- (nullable instancetype)initWithClass:(Class)cls;
 
 - (NSArray<JDProperty *> *)properties;
 
 @end
+
+NS_ASSUME_NONNULL_END

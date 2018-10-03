@@ -10,10 +10,13 @@
 #define JDEnginePrivate_h
 
 #import "JDEngine.h"
-#import <JavaScriptCore/JavaScriptCore.h>
+
+@import JavaScriptCore;
 
 @interface JDEngine()
+
 @property (nonatomic, strong) JSContext *context;
+
 @end
 
 

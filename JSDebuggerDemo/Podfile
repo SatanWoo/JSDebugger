@@ -1,3 +1,5 @@
+platform :ios, '9.0'
+
 target 'JSDebuggerDemo' do
   pod 'JSDebugger', :path => '../'
 end

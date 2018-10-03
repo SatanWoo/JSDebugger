@@ -10,7 +10,7 @@
 #import "JDMethod4JS.h"
 #import "JDFormatJSFunction.h"
 #import "JDClass4JS.h"
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 static JSValueRef JDClassGetProperty(JSContextRef ctx, JSObjectRef object, JSStringRef propertyName, JSValueRef *exception) {
     CFStringRef ref = JSStringCopyCFString(kCFAllocatorDefault, propertyName);

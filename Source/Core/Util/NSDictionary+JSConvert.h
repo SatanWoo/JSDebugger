@@ -6,24 +6,26 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+@import Foundation;
 
 // Not Fully Supported
 // Only CGRect, CGPoint, CGSize are convertiable temporarily
+NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (JSConvert)
 
-- (CGRect)rectValue;
-- (BOOL)convertToRect:(CGRect *)rect;
-- (BOOL)canConvertToRect;
+- (CGRect)jd_rectValue;
+- (BOOL)jd_convertToRect:(CGRect *)rect;
+- (BOOL)jd_canConvertToRect;
 
-- (CGPoint)pointValue;
-- (BOOL)convertToPoint:(CGPoint *)point;
-- (BOOL)canConvertToPoint;
+- (CGPoint)jd_pointValue;
+- (BOOL)jd_convertToPoint:(CGPoint *)point;
+- (BOOL)jd_canConvertToPoint;
 
-- (CGSize)sizeValue;
-- (BOOL)convertToSize:(CGSize *)size;
-- (BOOL)canConvertToSize;
+- (CGSize)jd_sizeValue;
+- (BOOL)jd_convertToSize:(CGSize *)size;
+- (BOOL)jd_canConvertToSize;
 
 @end
+
+NS_ASSUME_NONNULL_END

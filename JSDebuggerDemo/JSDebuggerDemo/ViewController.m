@@ -10,8 +10,10 @@
 #import <JSDebugger/JSDebugger.h>
 
 @interface ViewController ()
+
 @property (nonatomic, strong) UILabel *testLabel;
 @property (nonatomic, strong) JDLocalFileObserver *fileWatcher;
+
 @end
 
 @implementation ViewController
@@ -43,17 +45,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)printNSArray:(NSArray *)array
 {
     NSLog(@"array is %@", array);
 }
-
 
 @end

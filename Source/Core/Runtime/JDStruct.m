@@ -21,7 +21,7 @@ NSString *JDGetStructName(const char *c)
         char c = [typeString characterAtIndex:i];
         if (c == '{' || c=='_') {
             firstValidIndex++;
-        }else {
+        } else {
             break;
         }
     }
@@ -39,7 +39,7 @@ NSString *JDGetStructName(const char *c)
 
 + (void)define:(NSDictionary *)structDef name:(NSString *)structName
 {
-    if (!structDef || structName.length <= 0) return;
+    if (!structDef || structName.length <= 0) { return; }
     [structInfo setObject:structDef forKey:structName];
 }
 

@@ -6,7 +6,6 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
 #define JD_REGISTER_PLUGIN(IMP, NAME) \
@@ -15,11 +14,14 @@ FOUNDATION_EXTERN void JDRegisterPlugin(Class pluginClass); \
 - (NSString *)key {return @NAME;} \
 - (JSObjectCallAsFunctionCallback)function {return IMP;}
 
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol JDFunctionPlugin <NSObject>
+
 @required
 - (JSObjectCallAsFunctionCallback)function;
 - (NSString *)key;
+
 @end
 
 @interface JDFunctionPluginManager : NSObject
@@ -30,3 +32,5 @@ FOUNDATION_EXTERN void JDRegisterPlugin(Class pluginClass); \
 - (void)registerPluginsIntoContext:(JSContextRef)ctx;
 
 @end
+
+NS_ASSUME_NONNULL_END

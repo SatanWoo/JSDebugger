@@ -6,7 +6,9 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface JDEngine : NSObject
 
@@ -17,4 +19,8 @@
 - (void)evaluateScript:(NSString *)scriptContent;
 - (void)evaluateScriptAtPath:(NSString *)path;
 
+//- (instancetype)init NS_UNAVAILABLE;
+
 @end
+
+NS_ASSUME_NONNULL_END

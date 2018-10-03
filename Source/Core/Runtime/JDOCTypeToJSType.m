@@ -9,17 +9,17 @@
 #import "JDOCTypeToJSType.h"
 #import "JDClass4JS.h"
 #import "JDInstance4JS.h"
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 static bool isBooleanClass(NSNumber *number)
 {
-    if (![number isKindOfClass:[NSNumber class]]) return false;
+    if (![number isKindOfClass:[NSNumber class]]) { return false; }
     return [number class] == [@(YES) class];
 }
 
 JSValueRef JDConvertNSObjectToJSValue(JSContextRef ctx, NSObject *object)
 {
-    if (!object) return JSValueMakeUndefined(ctx);
+    if (!object) { return JSValueMakeUndefined(ctx); }
     
     Class cls = object_getClass(object);
     

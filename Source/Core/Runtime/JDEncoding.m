@@ -8,8 +8,6 @@
 
 #import "JDEncoding.h"
 #import "JDStruct.h"
-#import <CoreGraphics/CoreGraphics.h>
-
 
 JDEncoding JDGetEncoding(const char *c)
 {
@@ -60,7 +58,7 @@ JDEncoding JDGetEncoding(const char *c)
 static size_t JDSizeOfStruct(NSString *structName)
 {
     NSDictionary *definition = [JDStruct structDefintion:structName];
-    if (!definition) return 0;
+    if (!definition) { return 0; }
     
     size_t size = 0;
     

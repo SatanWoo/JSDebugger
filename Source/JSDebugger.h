@@ -5,10 +5,15 @@
 //  Created by JunyiXie on 2/10/2018.
 //
 
-#ifndef JSDebugger_h
-#define JSDebugger_h
+@import Foundation;
 
-#import "JDEngine.h"
-#import "JDLocalFileObserver.h"
+//! Project version number for Expecta.
+FOUNDATION_EXPORT double JSDebuggerVersionNumber;
 
-#endif /* JSDebugger_h */
+//! Project version string for Expecta.
+FOUNDATION_EXPORT const unsigned char JSDebuggerVersionString[];
+
+#import <JSDebugger/JDEngine.h>
+#import <JSDebugger/JDLocalFileObserver.h>
+
+

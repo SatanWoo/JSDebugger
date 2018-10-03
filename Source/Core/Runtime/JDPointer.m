@@ -9,7 +9,9 @@
 #import "JDPointer.h"
 
 @interface JDPointer()
+
 @property (nonatomic) void *pointer;
+
 @end
 
 @implementation JDPointer

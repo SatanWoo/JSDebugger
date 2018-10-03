@@ -8,7 +8,7 @@
 
 #import "JDPointer4JS.h"
 
-JSClassRef JDPointer4JS()
+JSClassRef JDPointer4JS(void)
 {
     static dispatch_once_t onceToken;
     static JSClassRef pointerRef = nil;

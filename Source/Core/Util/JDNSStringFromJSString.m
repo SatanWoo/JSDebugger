@@ -8,7 +8,7 @@
 
 #import "JDNSStringFromJSString.h"
 
-FOUNDATION_EXTERN NSString *JDCreateNSStringFromJSString(JSContextRef ctx, JSStringRef value)
+NSString *JDCreateNSStringFromJSString(JSContextRef ctx, JSStringRef value)
 {
     CFStringRef ref = JSStringCopyCFString(kCFAllocatorDefault, (JSStringRef)value);
     NSString *string = (__bridge_transfer NSString *)ref;
