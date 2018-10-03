@@ -26,7 +26,7 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
         }
         case kJSTypeBoolean: { return [NSNumber numberWithBool:JSValueToBoolean(ctx, value)]; }
         case kJSTypeNumber: { return [NSNumber numberWithDouble:JSValueToNumber(ctx, value, NULL)]; }
-        case kJSTypeNull: { return nil; }
+        case kJSTypeNull: { return [NSNull null]; }
         case kJSTypeUndefined: { return nil; }
         case kJSTypeObject:  break; 
     }

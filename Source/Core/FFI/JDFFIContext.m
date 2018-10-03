@@ -360,7 +360,7 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
         return JSValueMakeUndefined(ctx);
     }
     
-    assert(methodBridge.argumentsType.count == argumentCount + 2);
+    //assert(methodBridge.argumentsType.count == argumentCount + 2);
     
     size_t argCount = argumentCount + 2;
     
