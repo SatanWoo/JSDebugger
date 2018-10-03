@@ -340,9 +340,26 @@ return JSValueMakeNumber(ctx, v); \
     }
 }
 
+static bool JDFunctionCallPreCheck(JSContextRef ctx, JDMethodBridge *methodBridge, size_t argumentCount, const JSValueRef arguments[])
+{
+    for (int i = 0; i < argumentCount; i++) {
+        JDParameter *p = [methodBridge.argumentsType objectAtIndex:i + 2];
+        JSValueRef value = arguments[i];
+        
+        if (p.encoding != JDEncodingVoid && JSValueIsUndefined(ctx, value)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
                           size_t argumentCount, const JSValueRef arguments[])
 {
+    if (!JDFunctionCallPreCheck(ctx, methodBridge, argumentCount, arguments)) {
+        return JSValueMakeUndefined(ctx);
+    }
+    
     assert(methodBridge.argumentsType.count == argumentCount + 2);
     
     size_t argCount = argumentCount + 2;
