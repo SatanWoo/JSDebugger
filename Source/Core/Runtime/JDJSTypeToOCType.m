@@ -24,11 +24,11 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
             JSStringRelease(s);
             return str;
         }
-        case kJSTypeBoolean: return [NSNumber numberWithBool:JSValueToBoolean(ctx, value)];
-        case kJSTypeNumber: return [NSNumber numberWithDouble:JSValueToNumber(ctx, value, NULL)];
-        case kJSTypeNull: return nil;
-        case kJSTypeUndefined: return nil;
-        case kJSTypeObject: break;
+        case kJSTypeBoolean: { return [NSNumber numberWithBool:JSValueToBoolean(ctx, value)]; }
+        case kJSTypeNumber: { return [NSNumber numberWithDouble:JSValueToNumber(ctx, value, NULL)]; }
+        case kJSTypeNull: { return nil; }
+        case kJSTypeUndefined: { return nil; }
+        case kJSTypeObject:  break; 
     }
     
     if (type == kJSTypeObject) {

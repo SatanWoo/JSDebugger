@@ -17,8 +17,7 @@
 #import "JDNSStringFromJSString.h"
 #import "NSDictionary+JSConvert.h"
 #import "ffi.h"
-
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 static ffi_type *JDConvertEncodingToFFI(JDEncoding encoding)
 {
@@ -63,7 +62,7 @@ static ffi_type *JDConvertEncodingToFFI(JDEncoding encoding)
 static ffi_type *JDConvertStructToFFI(NSString *structName)
 {
     NSDictionary *info = [JDStruct structDefintion:structName];
-    if (!info) return NULL;
+    if (!info) { return NULL; }
     
     NSArray *defs = info[@"def"];
     if (!defs || ![defs isKindOfClass:[NSArray class]]) return NULL;
@@ -175,9 +174,9 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
                 return;
             }
             
-            BOOL ret = [dict canConvertToRect];
+            BOOL ret = [dict jd_canConvertToRect];
             if (ret) {
-                CGRect rect = [dict rectValue];
+                CGRect rect = [dict jd_rectValue];
                 *(CGFloat *)dst = rect.origin.x;
                 *(CGFloat *)((uintptr_t)dst + sizeof(CGFloat)) = rect.origin.y;
                 *(CGFloat *)((uintptr_t)dst + 2 * sizeof(CGFloat)) = rect.size.width;
@@ -185,17 +184,17 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
                 return;
             }
             
-            ret = [dict canConvertToPoint];
+            ret = [dict jd_canConvertToPoint];
             if (ret) {
-                CGPoint point = [dict pointValue];
+                CGPoint point = [dict jd_pointValue];
                 *(CGFloat *)dst = point.x;
                 *(CGFloat *)((uintptr_t)dst + sizeof(CGFloat)) = point.y;
                 return;
             }
             
-            ret = [dict canConvertToSize];
+            ret = [dict jd_canConvertToSize];
             if (ret) {
-                CGSize size = [dict sizeValue];
+                CGSize size = [dict jd_sizeValue];
                 *(CGFloat *)dst = size.width;
                 *(CGFloat *)((uintptr_t)dst + sizeof(CGFloat)) = size.height;
                 return;
@@ -401,7 +400,6 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
             return JSValueMakeUndefined(ctx);
         }
     }
-    
     
     return JSValueMakeUndefined(ctx);
 }

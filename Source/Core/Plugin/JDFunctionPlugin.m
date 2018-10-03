@@ -14,7 +14,9 @@ void JDRegisterPlugin(Class pluginClass)
 }
 
 @interface JDFunctionPluginManager()
+
 @property (nonatomic, strong) NSMutableArray *plugins;
+
 @end
 
 @implementation JDFunctionPluginManager
@@ -31,14 +33,20 @@ void JDRegisterPlugin(Class pluginClass)
 
 - (void)addPlugin:(id<JDFunctionPlugin>)plugin
 {
-    if (!plugin) return;
-    if (![plugin conformsToProtocol:NSProtocolFromString(@"JDFunctionPlugin")]) return;
+    NSParameterAssert(plugin);
+    if (!plugin)  { return; }
+    if (![plugin conformsToProtocol:NSProtocolFromString(@"JDFunctionPlugin")])  { return; }
     
     [self.plugins addObject:plugin];
 }
 
 - (void)registerPluginsIntoContext:(JSContextRef)ctx
 {
+    NSCParameterAssert(ctx);
+    if (ctx == NULL) {
+        return;
+    }
+    
     JSObjectRef global = JSContextGetGlobalObject(ctx);
     
     for (id<JDFunctionPlugin> plugin in self.plugins) {

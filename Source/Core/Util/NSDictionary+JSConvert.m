@@ -8,16 +8,21 @@
 
 #import "NSDictionary+JSConvert.h"
 
-@implementation NSDictionary (JSConvert)
-
 #if CGFLOAT_IS_DOUBLE
+
 #define CGFloatValue doubleValue
+
 #else
+
 #define CGFloatValue floatValue
+
 #endif
 
+@implementation NSDictionary (JSConvert)
+
 #pragma mark - CGRect
-- (CGRect)rectValue
+
+- (CGRect)jd_rectValue
 {
     assert([self.allKeys containsObject:@"origin"]);
     assert([self.allKeys containsObject:@"size"]);
@@ -33,27 +38,28 @@
     return rect;
 }
 
-- (BOOL)convertToRect:(CGRect *)rect
+- (BOOL)jd_convertToRect:(CGRect *)rect
 {
-    if (rect == NULL) return NO;
-    if (![self.allKeys containsObject:@"origin"]) return NO;
-    if (![self.allKeys containsObject:@"size"]) return NO;
+    if (rect == NULL) { return NO; }
+    if (![self.allKeys containsObject:@"origin"]) { return NO; }
+    if (![self.allKeys containsObject:@"size"]) { return NO; }
     
-    CGRect value = [self rectValue];
+    CGRect value = [self jd_rectValue];
     rect->origin = value.origin;
     rect->size = value.size;
     
     return YES;
 }
 
-- (BOOL)canConvertToRect
+- (BOOL)jd_canConvertToRect
 {
     CGRect rect;
-    return [self convertToRect:&rect];
+    return [self jd_convertToRect:&rect];
 }
 
 #pragma mark - CGPoint
-- (CGPoint)pointValue
+
+- (CGPoint)jd_pointValue
 {
     assert([self.allKeys containsObject:@"x"]);
     assert([self.allKeys containsObject:@"y"]);
@@ -65,13 +71,13 @@
     return p;
 }
 
-- (BOOL)convertToPoint:(CGPoint *)point
+- (BOOL)jd_convertToPoint:(CGPoint *)point
 {
-    if (point == NULL) return NO;
-    if (![self.allKeys containsObject:@"x"]) return NO;
-    if (![self.allKeys containsObject:@"y"]) return NO;
+    if (point == NULL) { return NO; }
+    if (![self.allKeys containsObject:@"x"]) { return NO; }
+    if (![self.allKeys containsObject:@"y"]) { return NO; }
     
-    CGPoint p = [self pointValue];
+    CGPoint p = [self jd_pointValue];
     
     point->x = p.x;
     point->y = p.y;
@@ -79,14 +85,15 @@
     return YES;
 }
 
-- (BOOL)canConvertToPoint
+- (BOOL)jd_canConvertToPoint
 {
     CGPoint point;
-    return [self convertToPoint:&point];
+    return [self jd_convertToPoint:&point];
 }
 
 #pragma mark - CGSize
-- (CGSize)sizeValue
+
+- (CGSize)jd_sizeValue
 {
     assert([self.allKeys containsObject:@"width"]);
     assert([self.allKeys containsObject:@"height"]);
@@ -98,21 +105,21 @@
     return size;
 }
 
-- (BOOL)convertToSize:(CGSize *)size
+- (BOOL)jd_convertToSize:(CGSize *)size
 {
     if (size == NULL) return NO;
-    if (![self.allKeys containsObject:@"width"]) return NO;
-    if (![self.allKeys containsObject:@"height"]) return NO;
+    if (![self.allKeys containsObject:@"width"]) { return NO; }
+    if (![self.allKeys containsObject:@"height"]) { return NO; }
     
     size->width = [self[@"width"] CGFloatValue];
     size->height = [self[@"height"] CGFloatValue];
     return YES;
 }
 
-- (BOOL)canConvertToSize
+- (BOOL)jd_canConvertToSize
 {
     CGSize size;
-    return [self convertToSize:&size];
+    return [self jd_convertToSize:&size];
 }
 
 @end

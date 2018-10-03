@@ -6,7 +6,6 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+@import JavaScriptCore;
 
-FOUNDATION_EXTERN JSClassRef JDPointer4JS();
+FOUNDATION_EXTERN JSClassRef JDPointer4JS(void);

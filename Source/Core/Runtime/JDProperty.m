@@ -9,21 +9,23 @@
 #import "JDProperty.h"
 
 @interface JDProperty()
+
 @property (nonatomic, readwrite) BOOL readonly;
 @property (nonatomic, readwrite) JDEncoding encoding;
 @property (nonatomic, copy, readwrite) NSString *setterName;
 @property (nonatomic, copy, readwrite) NSString *getterName;
 @property (nonatomic, copy, readwrite) NSString *propertyName;
+
 @end
 
 @implementation JDProperty
 
 - (instancetype)initWithProperty:(objc_property_t)property
 {
-    if (!property) return nil;
+    if (!property) { return nil; }
     const char *name = property_getName(property);
     
-    if (!name) return nil;
+    if (!name) { return nil; }
 
     self = [super init];
     if (self) {
@@ -33,70 +35,68 @@
                        [_propertyName substringToIndex:1].uppercaseString,
                        [_propertyName substringFromIndex:1]];
         
-        [self buildProperty:property];
-    }
-    return self;
-}
-
-- (void)buildProperty:(objc_property_t)property
-{
-    unsigned int attrCount;
-    objc_property_attribute_t *attrs = property_copyAttributeList(property, &attrCount);
-    for (unsigned int i = 0; i < attrCount; i++) {
-        switch (attrs[i].name[0]) {
-            case 'T': { // Type encoding
-                if (attrs[i].value) {
-                    self.encoding = JDGetEncoding(attrs[i].value);
+        unsigned int attrCount;
+        objc_property_attribute_t *attrs = property_copyAttributeList(property, &attrCount);
+        for (unsigned int i = 0; i < attrCount; i++) {
+            switch (attrs[i].name[0]) {
+                case 'T': { // Type encoding
+                    if (attrs[i].value) {
+                        self.encoding = JDGetEncoding(attrs[i].value);
+                    }
+                    break;
                 }
-                break;
-            }
-                
-            case 'R': {
-                self.readonly = YES;
-                break;
-            }
-                
-            case 'G': {
-                if (attrs[i].value) {
-                    self.getterName = [NSString stringWithUTF8String:attrs[i].value];
+                    
+                case 'R': {
+                    self.readonly = YES;
+                    break;
                 }
-                break;
-            }
-                
-            case 'S': {
-                if (attrs[i].value) {
-                    self.setterName = [NSString stringWithUTF8String:attrs[i].value];
+                    
+                case 'G': {
+                    if (attrs[i].value) {
+                        self.getterName = [NSString stringWithUTF8String:attrs[i].value];
+                    }
+                    break;
                 }
-                break;
+                    
+                case 'S': {
+                    if (attrs[i].value) {
+                        self.setterName = [NSString stringWithUTF8String:attrs[i].value];
+                    }
+                    break;
+                }
+                    
+                default: break;
             }
-                
-            default: break;
+        }
+        
+        if (attrs) {
+            free(attrs);
+            attrs = NULL;
         }
     }
-    
-    if (attrs) {
-        free(attrs);
-        attrs = NULL;
-    }
+    return self;
 }
 
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@ - %@ - %@ - %d", self.propertyName, self.setterName, self.getterName, self.readonly];
 }
+
 @end
 
 #pragma mark - JDPropertiesInClass
 
 @interface JDPropertiesInClass()
+
 @property (nonatomic, strong) NSArray<JDProperty *> *properties;
+
 @end
 
 @implementation JDPropertiesInClass
 
 - (instancetype)initWithClass:(Class)cls
 {
-    if (!cls) return nil;
+    if (!cls) { return nil; }
     
     self = [super init];
     if (self) {

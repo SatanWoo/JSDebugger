@@ -1,0 +1,6 @@
+framework module EasyReact {
+  umbrella header "JSDebugger.h"
+
+  export *
+  module * { export * }
+}

@@ -9,11 +9,12 @@
 #import "JDLocalFileObserver.h"
 
 @interface JDLocalFileObserver()
+
 @property (nonatomic, copy) JDFileChangeBlock changeBlock;
 @property (nonatomic, copy) NSString *filePath;
 
 @property (nonatomic, strong) dispatch_source_t fileSource;
-@property (nonatomic)         int fileHandle;
+@property (nonatomic) int fileHandle;
 @end
 
 @implementation JDLocalFileObserver
@@ -22,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _filePath = filePath.copy;
+        _filePath = [filePath copy];
         _changeBlock = [change copy];
     }
     return self;
@@ -30,7 +31,7 @@
 
 - (void)start
 {
-    if (self.fileSource) return;
+    if (self.fileSource) { return; }
     
     self.fileHandle = open([self.filePath fileSystemRepresentation], O_EVTONLY);
     if (self.fileHandle < 0) {
@@ -64,14 +65,12 @@
     dispatch_resume(self.fileSource);
 }
 
-
 - (void)stop
 {
-    if (!self.fileSource) return;
+    if (!self.fileSource) { return; }
     
     dispatch_cancel(self.fileSource);
     self.fileSource = nil;
 }
-
 
 @end

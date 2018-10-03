@@ -13,10 +13,9 @@
 #import "JDPropertyCache.h"
 #import "JDJSTypeToOCType.h"
 #import "JDOCTypeToJSType.h"
-
 #import "JDFFIContext.h"
 #import "JDMethodBridge.h"
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #define JDCache \
         cache()
@@ -28,7 +27,7 @@
             [JDCache addProperty:propertiesInClass forClass:[instance class]]; \
         } \
 
-static JDPropertyCache *cache()
+static JDPropertyCache *cache(void)
 {
     static JDPropertyCache *_cache = nil;
     if (!_cache) {
@@ -47,7 +46,6 @@ static JSValueRef JDInstanceGetProperty(JSContextRef ctx, JSObjectRef object, JS
     
     // @SatanWoo: Try regard it as property getter call directly
     SEL sel_data = NSSelectorFromString(JDFormatJSFunction(ocPropertyName));
-    NSString *selName = NSStringFromSelector(sel_data);
     
     // @SatanWoo: Give control back to Method4JS
     Method m = class_getInstanceMethod([instance class], sel_data);
@@ -62,7 +60,7 @@ static bool JDInstanceSetProperty(JSContextRef ctx, JSObjectRef object, JSString
     NSString *ocPropertyName = (__bridge_transfer NSString *)ref;
     
     id instance = (__bridge id)(JSObjectGetPrivate(object));
-    if (!instance) return true;
+    if (!instance) { return true; }
     
     // @SatanWoo: Fall to normal setter case
     NSString *setterName = [NSString stringWithFormat:@"set%@%@:",
@@ -85,7 +83,7 @@ static bool JDInstanceSetProperty(JSContextRef ctx, JSObjectRef object, JSString
     return false;
 }
 
-JSClassRef JDInstance4JS()
+JSClassRef JDInstance4JS(void)
 {
     static dispatch_once_t onceToken;
     static JSClassRef instanceRef = nil;

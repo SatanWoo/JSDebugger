@@ -12,14 +12,19 @@
 const NSUInteger JDDefaultPropertyCacheCapacity = 20;
 
 @interface JDPropertyCache()
+
 @property (nonatomic, strong) NSMapTable *clsToProperties;
+
 @end
 
 @implementation JDPropertyCache
 
 - (instancetype)init
 {
-    return [self initWithCapacity:JDDefaultPropertyCacheCapacity];
+    if (self = [self initWithCapacity:JDDefaultPropertyCacheCapacity]) {
+        
+    }
+    return self;
 }
 
 - (instancetype)initWithCapacity:(NSInteger)capacity
@@ -35,7 +40,7 @@ const NSUInteger JDDefaultPropertyCacheCapacity = 20;
 #pragma mark - Public API
 - (void)addProperty:(JDPropertiesInClass *)pic forClass:(Class)cls
 {
-    if (!pic) return;
+    if (!pic) { return; }
     [self.clsToProperties setObject:pic forKey:cls];
 }
 

@@ -1,0 +1,42 @@
+{
+  "name": "JSDebugger",
+  "version": "0.1.0",
+  "summary": "JavaScript-Based Debugger For Inspecting Running State Of Your Application",
+  "description": "JavaScript-Based Debugger For Inspecting Running State Of Your Application",
+  "homepage": "https://github.com/SatanWoo/JSDebugger",
+  "license": {
+    "type": "GPL",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "SatanWoo": "xxx@xxx.com"
+  },
+  "source": {
+    "git": "https://github.com/SatanWoo/JSDebugger.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "module_map": "Source/JSDebugger.modulemap",
+  "frameworks": [
+    "JavaScriptCore"
+  ],
+  "libraries": "c++",
+  "requires_arc": true,
+  "exclude_files": "Source/Core/Plugin/Plugin/JDChoose.mm",
+  "source_files": "Source/**/*",
+  "public_header_files": [
+    "Source/FileWatcher/*.h",
+    "Source/Core/JDEngine.h",
+    "Source/JSDebugger.h"
+  ],
+  "vendored_libraries": "Source/Core/FFI/Vendor/libffi.a",
+  "subspecs": [
+    {
+      "name": "no-arc",
+      "source_files": "Source/Core/Plugin/Plugin/JDChoose.mm",
+      "requires_arc": false
+    }
+  ]
+}

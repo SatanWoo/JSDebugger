@@ -25,8 +25,10 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
 }
 
 @interface JDEngine()
+
 @property (nonatomic) JSClassRef globalObject;
 @property (nonatomic) JSGlobalContextRef ctxRef;
+
 @end
 
 @implementation JDEngine
@@ -71,7 +73,7 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
 
 - (void)start
 {
-    [[JDFunctionPluginManager pluginManager] registerPluginsIntoContext:_ctxRef];
+    [[JDFunctionPluginManager pluginManager] registerPluginsIntoContext:self.ctxRef];
     
     [JDStruct setupDefaultStruct];
     
@@ -83,18 +85,20 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
 #pragma mark - Public API
 - (void)evaluateScript:(NSString *)scriptContent
 {
-    if (scriptContent.length <= 0) return;
+    NSParameterAssert(scriptContent);
+    if (scriptContent.length <= 0) { return; }
     [self.context evaluateScript:scriptContent];
 }
 
 - (void)evaluateScriptAtPath:(NSString *)path
 {
-    if (path.length <= 0) return;
+    NSParameterAssert(path);
+    if (path.length <= 0) { return; }
     
     BOOL isDir = NO;
     BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir];
     
-    if (!isExist || isDir) return;
+    if (!isExist || isDir) { return; }
     
     NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     [self evaluateScript:content];

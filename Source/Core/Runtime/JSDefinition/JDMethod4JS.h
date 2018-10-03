@@ -9,4 +9,4 @@
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
-FOUNDATION_EXTERN JSClassRef JDMethod4JS();
+FOUNDATION_EXTERN JSClassRef JDMethod4JS(void);

@@ -6,14 +6,14 @@
 //
 
 #import "NSObject+JDRuntimeIntrospection.h"
-#import <objc/runtime.h>
 #import "JDEncoding.h"
+@import ObjectiveC.runtime;
 
 @implementation NSObject (JDRuntimeIntrospection)
 
-- (NSArray *)logAllProperties
+- (NSArray<NSString *> *)jd_logAllProperties
 {
-  NSMutableArray *result = @[].mutableCopy;
+  NSMutableArray<NSString *> *result = @[].mutableCopy;
   unsigned int count;
   Ivar *ivars = class_copyIvarList([self class], &count);
   for (unsigned int i = 0; i < count; i++) {

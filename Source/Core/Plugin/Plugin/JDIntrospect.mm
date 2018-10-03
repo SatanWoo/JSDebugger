@@ -37,7 +37,7 @@ JD_REGISTER_PLUGIN(&introspect, "introspect");
 
 + (NSArray *)introspect:(id)_obj
 {
-    NSArray *result = [_obj logAllProperties];
+    NSArray *result = [_obj jd_logAllProperties];
     return  result;
 }
 

@@ -12,7 +12,7 @@
 #import "JDMethodBridge.h"
 #import "JDFFIContext.h"
 #import "JDPointer.h"
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 static JSValueRef JDMethodCallAsFunction(JSContextRef ctx, JSObjectRef function, JSObjectRef thisObject, size_t argumentCount, const JSValueRef arguments[], JSValueRef *exception)
 {
@@ -23,22 +23,22 @@ static JSValueRef JDMethodCallAsFunction(JSContextRef ctx, JSObjectRef function,
     
     if (JSValueIsObjectOfClass(ctx, thisObject, JDClass4JS())) {
         Class cls = (__bridge Class)JSObjectGetPrivate(thisObject);
-        if (!cls) return JSValueMakeUndefined(ctx);
+        if (!cls) { return JSValueMakeUndefined(ctx); }
         
         toSearchClass = object_getClass(cls);
         candidate = cls;
     } else if (JSValueIsObjectOfClass(ctx, thisObject, JDInstance4JS())) {
         id instance = (__bridge id)(JSObjectGetPrivate(thisObject));
-        if (!instance) return JSValueMakeUndefined(ctx);
+        if (!instance) { return JSValueMakeUndefined(ctx); }
         
         toSearchClass = [instance class];
         candidate = instance;
     }
     
-    if (!toSearchClass) return JSValueMakeUndefined(ctx);
+    if (!toSearchClass) { return JSValueMakeUndefined(ctx); }
     
     Method m = class_getInstanceMethod(toSearchClass, sel);
-    if (!m) return JSValueMakeUndefined(ctx);
+    if (!m) { return JSValueMakeUndefined(ctx); }
     
     IMP imp = method_getImplementation(m);
     

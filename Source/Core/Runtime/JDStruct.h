@@ -6,9 +6,10 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+@import JavaScriptCore;
+@import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXTERN NSString *JDGetStructName(const char *c);
 
@@ -20,3 +21,5 @@ FOUNDATION_EXTERN NSString *JDGetStructName(const char *c);
 + (void)setupDefaultStruct;
 
 @end
+
+NS_ASSUME_NONNULL_END

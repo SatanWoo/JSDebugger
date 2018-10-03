@@ -10,7 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (JDRuntimeIntrospection)
-- (NSArray *)logAllProperties;
+
+- (NSArray<NSString *> *)jd_logAllProperties;
+
 @end
 
 NS_ASSUME_NONNULL_END

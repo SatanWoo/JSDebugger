@@ -6,10 +6,12 @@
 //  Copyright © 2018年 SatanWoo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "JDEncoding.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface JDParameter : NSObject
+
 @property (nonatomic) JDEncoding encoding;
 @property (nonatomic) NSString *paramterName;
 
@@ -24,10 +26,13 @@
 @property (nonatomic, readonly) IMP imp;
 
 - (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)initWithSignature:(NSMethodSignature *)signature
                          selector:(SEL)selector
                           instace:(id)ins
-                              imp:(IMP)imp;
+                              imp:(IMP)imp NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END
