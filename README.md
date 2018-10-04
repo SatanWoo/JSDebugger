@@ -126,7 +126,8 @@ Here we list all features currently supported by **JSDebugger**:
 - [x] Introspect (Partially)
 - [ ] Customized Struct
 - [ ] Getter 
-- [ ] VA_LIST
+- [x] VA_LIST
+- [ ] Associate Object
 - [ ] Block
 - [ ] C Pointers
 
