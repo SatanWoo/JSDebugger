@@ -78,27 +78,4 @@
     NSLog(@"array is %@", array);
 }
 
-+ (void)testStr:(NSString *)str value:(double)d,...NS_REQUIRES_NIL_TERMINATION
-{
-    NSLog(@"str is %@", str);
-    
-    va_list list;
-    
-    //遍历开始
-    
-    va_start(list, d);
-    
-    NSLog(@"double start is %g", d);
-    
-    double arg;
-    
-    while ((arg = va_arg(list, double))) {
-        NSLog(@"当前参数:%g 地址:%p" , arg, &arg);
-    }
-    
-    va_end(list);
-    
-    
-}
-
 @end
