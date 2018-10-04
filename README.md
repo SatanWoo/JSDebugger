@@ -10,13 +10,13 @@ It's built on top of JavaScriptCore within C level interface which aims to accel
 
 ## Usage
 
-### Methods
+### Calling Methods
 
 	var view = UIView.alloc().init();
 	var k = NSMutableArray.alloc().init();
 	view.setBackgroundColor_(UIColor.redColor());
 	
-You may notice the method name is to some extent different from Objective-C environment. To illustrate it more precisely, the following two steps are executed underlying before calling an Objective-C method:
+You may notice the method name is to some extent different from Objective-C. To illustrate it more precisely, the following two steps are executed underlying before calling an Objective-C method:
 
 - All colons are converted to underscores.
 - Each part of the Objective-C selector is concatenated into single string.
@@ -27,7 +27,23 @@ For Example:
 	
 will be converted into following string:
 
-	application_didFinishLaunchingWithOptions(application, launchOptions)
+	application_didFinishLaunchingWithOptions_(application, launchOptions)
+
+### Variadic Arguments
+
+**JSDebugger** Support Variadic Arguments with NIL termination
+
+For Example:
+	
+	var array = NSArray.arrayWithObjects_(1, 2, 3);
+	
+Or you can define your own method with variadic arguments
+
+In Objective-C, you define a class method `+ (void)test:(int)first,...NS_REQUIRES_NIL_TERMINATION` in `ViewController`,
+
+then you call it with following codes:
+
+	ViewController.test_(1, 2, 3, 5, 7, 9, 8);
 
 
 ### Getter & Setter
@@ -43,6 +59,7 @@ For Example:
 	view.backgroundColor;   // It's Wrong
 	
 	view.backgroundColor(); // It's Correct
+
 	
 ### JavaScript
 
@@ -101,7 +118,7 @@ Follow steps listed below,
 
 3. Now, whenever you change something in your `test.js` and save it, your will find **JSDebugger** automatically reload the content of `test.js` and start to evaluate it.
 
-4. **Do not forget to stop the local file watch**
+4. **Do not forget to stop the local file watch whenever you don't need it**
 
 		[self.fileWatch stop]
 
