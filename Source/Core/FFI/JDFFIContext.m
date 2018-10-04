@@ -381,6 +381,7 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
     size_t argCount = methodBridge.argumentsType.count;
     if (argumentCount > methodBridge.argumentsType.count - 2) {
         isVariadic = YES;
+        argCount = argumentCount + 2 + 1; // @SatanWoo:append self/SEL and NULL as nil termination
     }
     
     ffi_type **ffiArgTypes = alloca(sizeof(ffi_type *) * argCount);
@@ -399,8 +400,13 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
     
     int i = 0;
     for (; i < argumentCount; i++) {
-        if (i >= methodBridge.argumentsType.count - 3 && isVariadic) break;
-        JDParameter *p = [methodBridge.argumentsType objectAtIndex:i + 2];
+        JDParameter *p;
+        if (isVariadic && i >= methodBridge.argumentsType.count - 2) {
+            p = [methodBridge.argumentsType lastObject];
+        } else {
+            p = [methodBridge.argumentsType objectAtIndex:i + 2];
+        }
+        
         
         ffi_type *ffiType;
         if (p.encoding == JDEncodingStruct) {
@@ -416,16 +422,9 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
     }
     
     if (isVariadic) {
-        // 2. @SatanWoo:Deal With Variadic Arguments
-        ffi_type *ffiType = JDConvertEncodingToFFI(methodBridge.argumentsType.lastObject.encoding);
-        ffiArgTypes[argCount - 1] = &ffi_type_pointer; // base address
-        
-        void *ffiArgPtr = alloca(ffiType->size * (argumentCount - i)) ;
-        int offset = 0;
-        for (; i < argumentCount; i++) {
-            JDSetJSValueToAddress(methodBridge.argumentsType.lastObject.encoding, ctx, arguments[i], ffiArgPtr + offset * ffiType->size);
-            offset += 1;
-        }
+        ffiArgTypes[argCount - 1] = &ffi_type_pointer;
+        void *ffiArgPtr = alloca(ffi_type_pointer.size);
+        memset(ffiArgPtr, 0, ffi_type_pointer.size);
         ffiArgs[argCount - 1] = ffiArgPtr;
     }
     
@@ -469,7 +468,7 @@ JSValueRef JDCallFunction(JSContextRef ctx, JDMethodBridge *methodBridge,
     }
     
     ffi_cif cif;
-    ffi_status ffiPrepStatus = ffi_prep_cif_var(&cif, FFI_DEFAULT_ABI, (unsigned int)0, (unsigned int)argCount, returnType, ffiArgTypes);
+    ffi_status ffiPrepStatus = ffi_prep_cif_var(&cif, FFI_DEFAULT_ABI, (unsigned int)methodBridge.argumentsType.count, (unsigned int)argCount, returnType, ffiArgTypes);
     
     if (ffiPrepStatus == FFI_OK) {
         void *returnPtr = NULL;

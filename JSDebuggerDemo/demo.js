@@ -1,9 +1,11 @@
-// var vcs = choose(ViewController);
-// var vc = vcs[0]; 
+//var vcs = choose(ViewController);
+//var vc = vcs[0];
 
 // vc.view().setBackgroundColor_(UIColor.s());
 
-var array = NSArray.arrayWithObjects_(72, 2, 3);
+ViewController.test_(60, 6, 7);
+
+//var array = NSArray.arrayWithObjects_(72, 2, 3);
 
 // var label = choose(UILabel)[0];
 // label.text = "SatanWoo";
