@@ -20,8 +20,10 @@ static std::ofstream _JDOut;
   });
   return _log;
 }
-- (void)dealloc {
-  _JDOut.close();
+
+- (void)dealloc
+{
+    _JDOut.close();
 }
 
 - (instancetype)init {
