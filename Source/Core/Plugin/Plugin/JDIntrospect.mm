@@ -13,6 +13,7 @@
 #import "NSObject+JDRuntimeIntrospection.h"
 #import <objc/runtime.h>
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "JDLog.h"
 
 static JSValueRef introspect(JSContextRef ctx, JSObjectRef function, JSObjectRef thisObject, size_t argumentCount, const JSValueRef arguments[], JSValueRef *exception)
 {
@@ -38,6 +39,8 @@ JD_REGISTER_PLUGIN(&introspect, "introspect");
 + (NSArray *)introspect:(id)_obj
 {
     NSArray *result = [_obj jd_logAllProperties];
+    [[JDLog shared] outputLog:[NSString stringWithFormat:@"%@", result]];
+
     return  result;
 }
 
