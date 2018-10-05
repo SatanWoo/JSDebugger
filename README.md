@@ -146,7 +146,7 @@ Here we list all features currently supported by **JSDebugger**:
 - [x] VA_LIST
 - [ ] Associate Object
 - [ ] Block
-- [ ] C Pointers
+- [x] C Pointer
 
 **<span style="color:red">Blocks and C Pointers is not ready within this version of JSDebugger</span>**
 
