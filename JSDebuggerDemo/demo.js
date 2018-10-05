@@ -38,3 +38,13 @@ vc.view().frame = frame;
 //  Treat Struct As A Plain JavaScript Object
 label.frame = {origin:{x:0, y:10}, size:{width:200, height:100}};
 
+// Pointer
+var intP = vc.allocAddressWithInt();
+vc.testIntPointer_(intP);
+
+var doubleP = vc.allocAddressWithDouble();
+vc.testDoublePointer_(doubleP);
+
+var charP = vc.allocAddressWithChar();
+vc.testCString_(charP);
+

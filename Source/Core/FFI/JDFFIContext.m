@@ -9,6 +9,7 @@
 #import "JDFFIContext.h"
 #import "JDEncoding.h"
 #import "JDClass4JS.h"
+#import "JDPointer4JS.h"
 #import "JDInstance4JS.h"
 #import "JDMethod4JS.h"
 #import "JDMethodBridge.h"
@@ -157,6 +158,7 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
         
     } else if (JSValueIsObject(ctx, value)) {
         // @SatanWoo: Check Our Own Wrapper Object
+        // Here Are Some Redundant Code Need To Be Eliminated
         if (JSValueIsObjectOfClass(ctx, value, JDClass4JS())) {
             Class cls = (__bridge Class)(JSObjectGetPrivate((JSObjectRef)value));
             *(Class *)dst = cls;
@@ -166,6 +168,9 @@ static void JDSetJSValueToAddress(JDEncoding encoding, JSContextRef ctx,  JSValu
         } else if (JSValueIsObjectOfClass(ctx, value, JDMethod4JS())) {
             SEL sel = (SEL)JSObjectGetPrivate((JSObjectRef)value);
             *(SEL *)dst = sel;
+        } else if (JSValueIsObjectOfClass(ctx, value, JDPointer4JS())) {
+            void *pointerValue = JSObjectGetPrivate((JSObjectRef)value);
+            *(void **)dst = pointerValue;
         } else {
             // plain object
             NSDictionary *dict = JDConvertJSValueToNSObject(ctx, value);
@@ -325,6 +330,13 @@ return JSValueMakeNumber(ctx, v); \
         {
             SEL sel = *(SEL *)src;
             return JSObjectMake(ctx, JDMethod4JS(), (void *)sel);
+        }
+            
+        case JDEncodingPointer:
+        case JDEncodingCString:
+        {
+            void *value = *(void **)src;
+            return JSObjectMake(ctx, JDPointer4JS(), value);
         }
         
         case JDEncodingStruct:

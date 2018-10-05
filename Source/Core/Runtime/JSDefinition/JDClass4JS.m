@@ -40,7 +40,7 @@ JSClassRef JDClass4JS()
     dispatch_once(&onceToken, ^{
         JSClassDefinition classDefinition;
         classDefinition = kJSClassDefinitionEmpty;
-        classDefinition.className = "JDClass";
+        classDefinition.className = "JDClass4JS";
         classDefinition.getProperty = &JDClassGetProperty;
         classRef = JSClassCreate(&classDefinition);
     });

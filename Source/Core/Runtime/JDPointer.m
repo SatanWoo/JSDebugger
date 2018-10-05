@@ -25,7 +25,12 @@
     return self;
 }
 
-- (const void *)pointer
+- (void *)pointerValue
+{
+    return _pointer;
+}
+
+- (const void *)constPointerValue
 {
     return (const void *)_pointer;
 }

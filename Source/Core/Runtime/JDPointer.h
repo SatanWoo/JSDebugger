@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPointer:(void *)pointer NS_DESIGNATED_INITIALIZER;
 
-- (const void *)pointer;
+- (void *)pointerValue;
+- (const void *)constPointerValue;
 
 @end
 

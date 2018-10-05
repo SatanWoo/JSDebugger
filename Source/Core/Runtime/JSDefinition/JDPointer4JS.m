@@ -15,7 +15,7 @@ JSClassRef JDPointer4JS(void)
     dispatch_once(&onceToken, ^{
         JSClassDefinition pointerDefinition;
         pointerDefinition = kJSClassDefinitionEmpty;
-        pointerDefinition.className = "JDPointer";
+        pointerDefinition.className = "JDPointer4JS";
         //pointerDefinition.callAsFunction = &JDMethodCallAsFunction;
         pointerRef = JSClassCreate(&pointerDefinition);
     });

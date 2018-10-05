@@ -90,7 +90,7 @@ JSClassRef JDInstance4JS(void)
     dispatch_once(&onceToken, ^{
         JSClassDefinition instanceDefinition;
         instanceDefinition = kJSClassDefinitionEmpty;
-        instanceDefinition.className = "JDInstance";
+        instanceDefinition.className = "JDInstance4JS";
         instanceDefinition.getProperty = &JDInstanceGetProperty;
         instanceDefinition.setProperty = &JDInstanceSetProperty;
         instanceRef = JSClassCreate(&instanceDefinition);

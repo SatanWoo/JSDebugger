@@ -57,7 +57,7 @@ JSClassRef JDMethod4JS()
     dispatch_once(&onceToken, ^{
         JSClassDefinition methodDefinition;
         methodDefinition = kJSClassDefinitionEmpty;
-        methodDefinition.className = "JDClass";
+        methodDefinition.className = "JDClass4JS";
         methodDefinition.callAsFunction = &JDMethodCallAsFunction;
         methodRef = JSClassCreate(&methodDefinition);
     });

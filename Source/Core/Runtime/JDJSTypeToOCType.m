@@ -62,9 +62,8 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
                 return instance;
             } else if (JSValueIsObjectOfClass(ctx, value, JDMethod4JS())) {
                 SEL sel = (SEL)JSObjectGetPrivate((JSObjectRef)value);
-                return [NSValue valueWithPointer:sel];
+                return [[JDPointer alloc] initWithPointer:sel];
             }
-            
             
             // @SatanWoo Then regard it as plain object and convert it to NSDictionary
             JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(ctx, (JSObjectRef)value);

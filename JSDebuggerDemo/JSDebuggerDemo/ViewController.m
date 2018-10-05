@@ -10,9 +10,14 @@
 #import <JSDebugger/JSDebugger.h>
 
 @interface ViewController ()
+{
+    char *testStr;
+}
 
 @property (nonatomic, strong) UILabel *testLabel;
 @property (nonatomic, strong) JDLocalFileObserver *fileWatcher;
+@property (nonatomic) int testInt;
+@property (nonatomic) double testDouble;
 
 //- (void)test:(NSNumber *)first,...NS_REQUIRES_NIL_TERMINATION;
 
@@ -24,13 +29,8 @@
 {
     [super viewDidLoad];
     
-    //[ViewController test:7, 8, 9, nil];
-    
     [[JDEngine engine] start];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[JDEngine engine] evaluateScriptAtPath:[[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"]];
-    });
     
     self.testLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 100, 150, 50)];
     self.testLabel.text = @"Try JSDebugger!";
@@ -51,6 +51,13 @@
     }
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [[JDEngine engine] evaluateScriptAtPath:[[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"]];
 }
 
 
@@ -81,6 +88,39 @@
 - (void)printName:(NSString *)name
 {
     NSLog(@"name is %@", name);
+}
+
+- (int *)allocAddressWithInt
+{
+    self.testInt = 20;
+    return &_testInt;
+}
+
+- (double *)allocAddressWithDouble
+{
+    self.testDouble = 30.7;
+    return &_testDouble;
+}
+
+- (char *)allocAddressWithChar
+{
+    testStr = "jkjskjsd\0";
+    return testStr;
+}
+
+- (void)testDoublePointer:(double *)doubleP
+{
+    NSLog(@"value is %g", *doubleP);
+}
+
+- (void)testIntPointer:(int *)intP
+{
+    NSLog(@"value is %d", *intP);
+}
+
+- (void)testCString:(char *)charP
+{
+    NSLog(@"value is %s", charP);
 }
 
 @end
