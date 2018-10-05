@@ -16,7 +16,6 @@
 #import "JDStruct.h"
 #import "JDNSStringFromJSString.h"
 #import "NSDictionary+JSConvert.h"
-#import "JDVariadicArguments.h"
 #import "ffi.h"
 @import ObjectiveC.runtime;
 

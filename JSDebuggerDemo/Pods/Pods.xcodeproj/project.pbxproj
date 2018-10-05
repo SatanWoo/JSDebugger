@@ -11,8 +11,6 @@
 		00276205DA2B797DF54B0C47F3125262 /* JDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C79A1153F981904A25CFD3312B3D13 /* JDLog.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		00D4B9B2D6D47AEB3BD35B3085A865C7 /* JDLocalFileObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E422B307D7E56390869307F9C1C83F8A /* JDLocalFileObserver.m */; };
 		16A0D264340365611E2EBBE6865B8EA0 /* NSObject+JDRuntimeIntrospection.h in Headers */ = {isa = PBXBuildFile; fileRef = 835F67A0E55C0135F59178B662CDB078 /* NSObject+JDRuntimeIntrospection.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		19776A5D216520770004E15E /* JDVariadicArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 19776A5B216520770004E15E /* JDVariadicArguments.h */; };
-		19776A5E216520770004E15E /* JDVariadicArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 19776A5C216520770004E15E /* JDVariadicArguments.m */; };
 		1A163D5DE0A997844CD822C18DB1FB6E /* JDMethod4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = DDE8169AE409F069D5F4AE252F311912 /* JDMethod4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1F6A4F23E65277296EF76111B9EEAD87 /* JDIntrospect.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2125A507B8CD64C6A90C6BC1AD4A1B /* JDIntrospect.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		21CB8EEA13FC84B48FD65A87060586A8 /* ffitarget_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 152F32E3C85F8AE53D6F30B4ADD670B2 /* ffitarget_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -99,8 +97,6 @@
 		0CF9ADE97BB48BBF7A22649C19DEFFB1 /* JSDebugger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSDebugger.h; path = Source/JSDebugger.h; sourceTree = "<group>"; };
 		1214A492972FC8D57E828B127162A4B9 /* JDMethod4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDMethod4JS.m; sourceTree = "<group>"; };
 		152F32E3C85F8AE53D6F30B4ADD670B2 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
-		19776A5B216520770004E15E /* JDVariadicArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDVariadicArguments.h; sourceTree = "<group>"; };
-		19776A5C216520770004E15E /* JDVariadicArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDVariadicArguments.m; sourceTree = "<group>"; };
 		1C36652936D87E7DA891927D029906F8 /* JDPointer4JS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDPointer4JS.m; sourceTree = "<group>"; };
 		2651D0C3C24B86CF06F871E8FC3E7BE7 /* JSDebugger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSDebugger-dummy.m"; sourceTree = "<group>"; };
 		271F0168EBBBDFE2A5288F4559F0E3FF /* JDNSStringFromJSString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDNSStringFromJSString.h; sourceTree = "<group>"; };
@@ -364,8 +360,6 @@
 				7AF74E1D764AFF145F032201EB48D167 /* JDPropertyCache.m */,
 				8E047ED251E76D0735732F237B120541 /* JDStruct.h */,
 				F4668CCB675C984FD0FE45F17AE0488B /* JDStruct.m */,
-				19776A5B216520770004E15E /* JDVariadicArguments.h */,
-				19776A5C216520770004E15E /* JDVariadicArguments.m */,
 				15612749E91FEB46A7AC190E82654062 /* JSDefinition */,
 			);
 			path = Runtime;
@@ -479,7 +473,6 @@
 				A37E7D9EB5A055F38087CF10D2BC26AB /* JDPropertyCache.h in Headers */,
 				C38D12CE9C45D6B5F0054759D46A0084 /* JDStruct.h in Headers */,
 				76A67A6A3D84FC783339124AEBFD9BB0 /* JSDebugger.h in Headers */,
-				19776A5D216520770004E15E /* JDVariadicArguments.h in Headers */,
 				F587C3A8D78F1B4D86B8871D9CAE2FE0 /* NSDictionary+JSConvert.h in Headers */,
 				16A0D264340365611E2EBBE6865B8EA0 /* NSObject+JDRuntimeIntrospection.h in Headers */,
 			);
@@ -579,7 +572,6 @@
 				762414D70F250938EBFD00796066EB29 /* JDOCTypeToJSType.m in Sources */,
 				4AA643429858A6B8B0CD2E8A6A02C6C3 /* JDPointer.m in Sources */,
 				BA9F6A14E152E837AF07B5C0253853C8 /* JDPointer4JS.m in Sources */,
-				19776A5E216520770004E15E /* JDVariadicArguments.m in Sources */,
 				A674D4E30BC525A98509F0C6EA810B32 /* JDProperty.m in Sources */,
 				B7A56EDC9A505FE803430D0C3D6EB71D /* JDPropertyCache.m in Sources */,
 				9FB161BE21672AFB00A76163 /* JDLog.mm in Sources */,

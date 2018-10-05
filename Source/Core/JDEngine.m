@@ -13,6 +13,7 @@
 #import "JDNSStringFromJSString.h"
 #import "JDFunctionPlugin.h"
 #import "JDLog.h"
+#import "JDJSTypeToOCType.h"
 
 static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
                                       JSStringRef propertyName, JSValueRef *exception)
@@ -82,6 +83,25 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
     }];
 }
 
+#pragma mark - Private Logic
+
+- (void)outputExceptionValue:(JSValueRef)exceptionValueRef
+{
+    if (exceptionValueRef != NULL) {
+        // @SatanWoo: Exception Value is normally a
+        id exception = JDConvertJSValueToNSObject(self.ctxRef, exceptionValueRef);
+        
+        JSValue *value = [JSValue valueWithJSValueRef:exceptionValueRef
+                                            inContext:[JSContext contextWithJSGlobalContextRef:self.ctxRef]];
+        if (exception) {
+            JDLog(@"[JSDebugger]::Evaluating JSDebugger Cause Exception Found %@ on line %@ column %@",
+                  value,
+                  exception[@"line"] ?: @"undefined",
+                  exception[@"column"] ?: @"undefined");
+        }
+    }
+}
+
 #pragma mark - Public API
 - (void)evaluateScript:(NSString *)scriptContent
 {
@@ -92,12 +112,16 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
     JSStringRef jsContentRef = JSStringCreateWithUTF8CString(scriptContent.UTF8String);
     
     if (!JSCheckScriptSyntax(self.ctxRef, jsContentRef, NULL, 1, &exceptionValue)) {
+        [self outputExceptionValue:exceptionValue];
+        
         JSStringRelease(jsContentRef);
         return;
     }
     
     JSEvaluateScript(self.ctxRef, jsContentRef, JSContextGetGlobalObject(self.ctxRef), NULL, 1, &exceptionValue);
     JSStringRelease(jsContentRef);
+    
+    [self outputExceptionValue:exceptionValue];
 }
 
 - (void)evaluateScriptAtPath:(NSString *)path

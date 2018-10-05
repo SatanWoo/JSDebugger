@@ -65,6 +65,7 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
                 return [NSValue valueWithPointer:sel];
             }
             
+            
             // @SatanWoo Then regard it as plain object and convert it to NSDictionary
             JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(ctx, (JSObjectRef)value);
             size_t count = JSPropertyNameArrayGetCount(properties);

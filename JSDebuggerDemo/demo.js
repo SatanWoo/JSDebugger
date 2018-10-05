@@ -1,5 +1,7 @@
 //ViewController.test_(60, 6, 7);
 
+vc = 5;
+
 var array = NSArray.arrayWithObjects_(72, 2, 3);
 
 ViewController.printNSArray_(array);
