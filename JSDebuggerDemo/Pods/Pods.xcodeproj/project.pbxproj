@@ -46,6 +46,7 @@
 		982DDA06CB83626C33AEF01C864AAA09 /* JDClass4JS.h in Headers */ = {isa = PBXBuildFile; fileRef = E317EB71122BFABE992E96DA3B0C1B3D /* JDClass4JS.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9D9D6F3F06754D8B8BDD360D9A70F8DC /* libffi.a in Sources */ = {isa = PBXBuildFile; fileRef = F7CF64FC16405AE3458B31AB3F996740 /* libffi.a */; };
 		9F0CFC07BB3D1D576062D7B17CB8116D /* JSDebugger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2651D0C3C24B86CF06F871E8FC3E7BE7 /* JSDebugger-dummy.m */; };
+		9FB161BE21672AFB00A76163 /* JDLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FB161BD21672AFB00A76163 /* JDLog.mm */; };
 		A1BE16A51ECA744525366E8F1699215A /* JDChoose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8B94DCC1CEC9A84D5DB8F64546678D77 /* JDChoose.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A37E7D9EB5A055F38087CF10D2BC26AB /* JDPropertyCache.h in Headers */ = {isa = PBXBuildFile; fileRef = AC924A2D7CBF799B3F73F25BE7604AF3 /* JDPropertyCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A674D4E30BC525A98509F0C6EA810B32 /* JDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9A64BBB342209254715B0619E4FE95 /* JDProperty.m */; };
@@ -130,6 +131,7 @@
 		990691ED86E790615B8F9FD254CD8DD7 /* Pods-JSDebuggerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSDebuggerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		991B037B624ECC788E922038173C0D49 /* JSDebugger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSDebugger-prefix.pch"; sourceTree = "<group>"; };
 		9C2125A507B8CD64C6A90C6BC1AD4A1B /* JDIntrospect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDIntrospect.h; sourceTree = "<group>"; };
+		9FB161BD21672AFB00A76163 /* JDLog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JDLog.mm; sourceTree = "<group>"; };
 		A8442C76B221FF50561BA4EA1A177FA4 /* JDFormatJSFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDFormatJSFunction.h; sourceTree = "<group>"; };
 		AB72DC292BDBB8914CAE0F0547BD0755 /* Pods-JSDebuggerDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JSDebuggerDemo-resources.sh"; sourceTree = "<group>"; };
 		ABBE798472AA3357B5441B3CC7B58757 /* ffi_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_arm.h; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				AF5EC4280098F5DA7EAA31F217F86B70 /* JDEngine.m */,
 				4173C6A806B7AE5D292CAF2C7F0F39D5 /* JDEnginePrivate.h */,
 				C2C79A1153F981904A25CFD3312B3D13 /* JDLog.h */,
+				9FB161BD21672AFB00A76163 /* JDLog.mm */,
 				29B0138A32A204A12D6D2DEA1BB03E15 /* FFI */,
 				467AEAD51A7FC99B559909F557BC5EDE /* Introspect */,
 				C0EC1CC283714393C868AD1A65DEA02E /* Plugin */,
@@ -579,6 +582,7 @@
 				19776A5E216520770004E15E /* JDVariadicArguments.m in Sources */,
 				A674D4E30BC525A98509F0C6EA810B32 /* JDProperty.m in Sources */,
 				B7A56EDC9A505FE803430D0C3D6EB71D /* JDPropertyCache.m in Sources */,
+				9FB161BE21672AFB00A76163 /* JDLog.mm in Sources */,
 				F3EEBD6365F3DDC06FCB6F890F6A02BF /* JDStruct.m in Sources */,
 				9F0CFC07BB3D1D576062D7B17CB8116D /* JSDebugger-dummy.m in Sources */,
 				CFA1EF15001724B4AA97A97FF6862415 /* JSDebugger.modulemap in Sources */,
