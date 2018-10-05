@@ -11,7 +11,6 @@
 #import "JDClass4JS.h"
 #import "JDInstance4JS.h"
 #import "JDMethod4JS.h"
-#import "JDPointer.h"
 
 id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
 {
@@ -62,7 +61,7 @@ id JDConvertJSValueToNSObject(JSContextRef ctx, JSValueRef value)
                 return instance;
             } else if (JSValueIsObjectOfClass(ctx, value, JDMethod4JS())) {
                 SEL sel = (SEL)JSObjectGetPrivate((JSObjectRef)value);
-                return [[JDPointer alloc] initWithPointer:sel];
+                return [NSValue valueWithPointer:sel];
             }
             
             // @SatanWoo Then regard it as plain object and convert it to NSDictionary

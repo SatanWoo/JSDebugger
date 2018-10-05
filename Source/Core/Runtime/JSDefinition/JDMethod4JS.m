@@ -11,7 +11,6 @@
 #import "JDInstance4JS.h"
 #import "JDMethodBridge.h"
 #import "JDFFIContext.h"
-#import "JDPointer.h"
 @import ObjectiveC.runtime;
 
 static JSValueRef JDMethodCallAsFunction(JSContextRef ctx, JSObjectRef function, JSObjectRef thisObject, size_t argumentCount, const JSValueRef arguments[], JSValueRef *exception)
