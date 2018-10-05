@@ -78,4 +78,9 @@
     NSLog(@"array is %@", array);
 }
 
+- (void)printName:(NSString *)name
+{
+    NSLog(@"name is %@", name);
+}
+
 @end
