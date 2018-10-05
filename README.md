@@ -121,10 +121,12 @@ Follow steps listed below,
 4. **Do not forget to stop the local file watch whenever you don't need it**
 
 		[self.fileWatch stop]
+		
+If you still get confused, just checkout the code in the JSDebuggerDemo. 
 
 ## Example
 
-Checkout the JSDebuggerDemo
+Checkout `demo.js` in the JSDebuggerDemo, it shows great detail of what you can do with **JSDebugger**.
 
 ## Contribution
 
