@@ -56,7 +56,6 @@
 		C38D12CE9C45D6B5F0054759D46A0084 /* JDStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E047ED251E76D0735732F237B120541 /* JDStruct.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C664644BB53169A040E49BFB7502DD90 /* JDFFIContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835C5753854F47E6E918DC1530EB6F1 /* JDFFIContext.m */; };
 		C95F68A7236372FF20BB758BC7AF5F7B /* ffitarget_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 06AE491315E902C1DBA369ED6E292106 /* ffitarget_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CAA7E2BEBAD4BBFD11B83679B4F9D1C4 /* JDEnginePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4173C6A806B7AE5D292CAF2C7F0F39D5 /* JDEnginePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CFA1EF15001724B4AA97A97FF6862415 /* JSDebugger.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = 921B97AE96B721817468539851619BD9 /* JSDebugger.modulemap */; };
 		D37BB194EB227732CA03BB21C1932FEC /* JDJSTypeToOCType.h in Headers */ = {isa = PBXBuildFile; fileRef = 022CF19F3F739A49D64AA5605F70FE2A /* JDJSTypeToOCType.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D4074A3578D39B904C8A69356CABE028 /* JDFormatJSFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = A8442C76B221FF50561BA4EA1A177FA4 /* JDFormatJSFunction.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -104,7 +103,6 @@
 		33B434EF268B161A41122AB61F32BDFE /* JDNSStringFromJSString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDNSStringFromJSString.m; sourceTree = "<group>"; };
 		360A53EECC187F7F41224710F8FF1BC2 /* Pods-JSDebuggerDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSDebuggerDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		397BE41B01DF3AF4DDA82D1519354AED /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
-		4173C6A806B7AE5D292CAF2C7F0F39D5 /* JDEnginePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDEnginePrivate.h; sourceTree = "<group>"; };
 		42E017A59A2B4915EEC6F99C3530B7F4 /* JDPointer4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDPointer4JS.h; sourceTree = "<group>"; };
 		461E567DB746B32D5FC6E68B30E5055E /* JDInstance4JS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JDInstance4JS.h; sourceTree = "<group>"; };
 		4835C5753854F47E6E918DC1530EB6F1 /* JDFFIContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JDFFIContext.m; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			children = (
 				B8ADEFB3EB1F3204AF88F6B237CA3B9F /* JDEngine.h */,
 				AF5EC4280098F5DA7EAA31F217F86B70 /* JDEngine.m */,
-				4173C6A806B7AE5D292CAF2C7F0F39D5 /* JDEnginePrivate.h */,
 				C2C79A1153F981904A25CFD3312B3D13 /* JDLog.h */,
 				9FB161BD21672AFB00A76163 /* JDLog.mm */,
 				29B0138A32A204A12D6D2DEA1BB03E15 /* FFI */,
@@ -454,7 +451,6 @@
 				982DDA06CB83626C33AEF01C864AAA09 /* JDClass4JS.h in Headers */,
 				602C42A455F291A8E014EB6F76F6F626 /* JDEncoding.h in Headers */,
 				6BDC223BA5885D4C01737A5D95D8E088 /* JDEngine.h in Headers */,
-				CAA7E2BEBAD4BBFD11B83679B4F9D1C4 /* JDEnginePrivate.h in Headers */,
 				DF3F43F0037F26E301320393C43895AA /* JDFFIContext.h in Headers */,
 				D4074A3578D39B904C8A69356CABE028 /* JDFormatJSFunction.h in Headers */,
 				791A3CEE615A762CBD828F9035C5B276 /* JDFunctionPlugin.h in Headers */,

@@ -7,7 +7,6 @@
 //
 
 #import "JDEngine.h"
-#import "JDEnginePrivate.h"
 #import "JDStruct.h"
 #import "JDClass4JS.h"
 #import "JDNSStringFromJSString.h"
@@ -57,8 +56,6 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
         
         _globalObject = JSClassCreate(&globalDefinition);
         _ctxRef = JSGlobalContextCreate(_globalObject);
-        
-        _context = [JSContext contextWithJSGlobalContextRef:_ctxRef];
     }
     return self;
 }
@@ -77,10 +74,6 @@ static JSValueRef JDGlobalGetProperty(JSContextRef ctx, JSObjectRef object,
     [[JDFunctionPluginManager pluginManager] registerPluginsIntoContext:self.ctxRef];
     
     [JDStruct setupDefaultStruct];
-    
-    [self.context setExceptionHandler:^(JSContext *context, JSValue *exception){
-        JDLog(@"exception is %@", exception);
-    }];
 }
 
 #pragma mark - Private Logic
