@@ -1,10 +1,10 @@
 # JSDebugger
 
-**JavaScript-Based Debugger For Inspecting Running State Of Your Application**
+**JavaScript-Based Tool For Inspecting Running State Of Your Application**
 
 > The status of this project is under rapid development and first stable version is currently hold on master
 
-JSDebugger is a runtime inspecting tool for you to dig into details of your applications.
+JSDebugger is a runtime inspecting tool for you to dig into details of your applications or change application logics dynamically.
 
 **You have call any Objective-C method at anytime without manually define JSExport!**
 
