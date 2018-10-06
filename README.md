@@ -8,6 +8,8 @@ JSDebugger is a runtime inspecting tool for you to dig into details of your appl
 
 It's built on top of JavaScriptCore within C level interface which aims to accelerate the bridging process between Objective-C and JavaScript.
 
+![](https://github.com/SatanWoo/BeeHive/blob/master/jstester.gif?raw=true)
+
 ## Usage
 
 ### Calling Methods
