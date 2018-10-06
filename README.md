@@ -118,7 +118,7 @@ Follow steps listed below,
 	        [self.fileWatcher start];
 	    }
 
-3. Now, whenever you change something in your `test.js` and save it, your will find **JSDebugger** automatically reload the content of `test.js` and start to evaluate it.
+3. Now, whenever you change something in your `test.js` and **save it(Command + S)**, your will find **JSDebugger** automatically reload the content of `test.js` and start to evaluate it.
 
 4. **Do not forget to stop the local file watch whenever you don't need it**
 
