@@ -152,8 +152,6 @@ Here we list all features currently supported by **JSDebugger**:
 - [ ] Block
 - [x] C Pointer
 
-**<span style="color:red">Blocks and C Pointers is not ready within this version of JSDebugger</span>**
-
 ## What's Next
 
 An IDE with live Objective-C to JavaScript convertion is under development.   
