@@ -2,7 +2,7 @@
 
 **JavaScript-Based Debugger For Inspecting Running State Of Your Application**
 
-> The status of this project is under rapid development, the stability is not guaranteed
+> The status of this project is under rapid development and first stable version is currently hold on master
 
 JSDebugger is a runtime inspecting tool for you to dig into details of your applications.
 
