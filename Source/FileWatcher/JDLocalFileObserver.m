@@ -44,7 +44,8 @@
     
     self.fileSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE,
                                              self.fileHandle,
-                                             DISPATCH_VNODE_WRITE,
+                                             DISPATCH_VNODE_WRITE | DISPATCH_VNODE_DELETE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_ATTRIB |
+                                             DISPATCH_VNODE_LINK | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE,
                                              DISPATCH_TARGET_QUEUE_DEFAULT);
     
     dispatch_source_set_event_handler(self.fileSource, ^() {
