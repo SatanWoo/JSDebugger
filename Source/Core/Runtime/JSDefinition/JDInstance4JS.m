@@ -71,6 +71,8 @@ static bool JDInstanceSetProperty(JSContextRef ctx, JSObjectRef object, JSString
     IMP imp = class_getMethodImplementation([instance class], sel);
     NSMethodSignature *methodSignature = [instance methodSignatureForSelector:sel];
     
+    if (!methodSignature) return false;
+    
     JDMethodBridge *methodBridge = [[JDMethodBridge alloc] initWithSignature:methodSignature
                                                                     selector:sel
                                                                      instace:instance

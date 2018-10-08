@@ -14,6 +14,7 @@
 		19776A242163CF610004E15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19776A232163CF610004E15E /* Assets.xcassets */; };
 		19776A272163CF610004E15E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19776A252163CF610004E15E /* LaunchScreen.storyboard */; };
 		19776A6021652E260004E15E /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 19776A5F21652E260004E15E /* demo.js */; };
+		19776A63216B539B0004E15E /* TestAssociateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 19776A62216B539B0004E15E /* TestAssociateObject.m */; };
 		BE6093A99023CA68A4836B36 /* libPods-JSDebuggerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0102F3C40B62EBEFC158364D /* libPods-JSDebuggerDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		19776A282163CF610004E15E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19776A322163D6FA0004E15E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		19776A5F21652E260004E15E /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
+		19776A61216B539B0004E15E /* TestAssociateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAssociateObject.h; sourceTree = "<group>"; };
+		19776A62216B539B0004E15E /* TestAssociateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAssociateObject.m; sourceTree = "<group>"; };
 		604675B9F688F7FB59ABC51E /* Pods-JSDebuggerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSDebuggerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSDebuggerDemo/Pods-JSDebuggerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FBBA29344B14E0572907B211 /* Pods-JSDebuggerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSDebuggerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSDebuggerDemo/Pods-JSDebuggerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +76,8 @@
 				19776A1B2163CF610004E15E /* AppDelegate.m */,
 				19776A1D2163CF610004E15E /* ViewController.h */,
 				19776A1E2163CF610004E15E /* ViewController.m */,
+				19776A61216B539B0004E15E /* TestAssociateObject.h */,
+				19776A62216B539B0004E15E /* TestAssociateObject.m */,
 				19776A202163CF610004E15E /* Main.storyboard */,
 				19776A232163CF610004E15E /* Assets.xcassets */,
 				19776A252163CF610004E15E /* LaunchScreen.storyboard */,
@@ -238,6 +243,7 @@
 				19776A1F2163CF610004E15E /* ViewController.m in Sources */,
 				19776A1C2163CF610004E15E /* AppDelegate.m in Sources */,
 				19776A192163CF610004E15E /* main.m in Sources */,
+				19776A63216B539B0004E15E /* TestAssociateObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

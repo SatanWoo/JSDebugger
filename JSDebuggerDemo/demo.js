@@ -31,7 +31,7 @@ vc.view().setBackgroundColor_(UIColor.redColor());
 // Struct
 var frame = vc.view().frame();
 
-frame.origin.x = 50;
+frame.origin.x = 100;
 
 vc.view().frame = frame;
 
@@ -47,4 +47,15 @@ vc.testDoublePointer_(doubleP);
 
 var charP = vc.allocAddressWithChar();
 vc.testCString_(charP);
+
+// AssociateObject
+var aso = TestAssociateObject.alloc().init();
+vc.associateObject = aso;
+vc.print();
+
+aso.associateInt = 5;
+
+vc.print();
+
+
 

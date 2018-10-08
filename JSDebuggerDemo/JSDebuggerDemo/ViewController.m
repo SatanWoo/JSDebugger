@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestAssociateObject.h"
 #import <JSDebugger/JSDebugger.h>
 
 @interface ViewController ()
@@ -16,6 +17,7 @@
 
 @property (nonatomic, strong) UILabel *testLabel;
 @property (nonatomic, strong) JDLocalFileObserver *fileWatcher;
+@property (nonatomic, strong) TestAssociateObject *associateObject;
 @property (nonatomic) int testInt;
 @property (nonatomic) double testDouble;
 
@@ -31,14 +33,13 @@
     
     [[JDEngine engine] start];
     
-    
     self.testLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 100, 150, 50)];
     self.testLabel.text = @"Try JSDebugger!";
     self.testLabel.textColor = [UIColor orangeColor];
     
     [self.view addSubview:self.testLabel];
     
-    NSString *jsFilePathOnMac = @"/Users/z/Desktop/test/demo.js"; // @SatanWoo: There is one copy in your project
+    NSString *jsFilePathOnMac = @"/Users/z/Documents/Github/JSDebugger/JSDebuggerDemo/demo.js"; // @SatanWoo: There is one copy in your project
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:jsFilePathOnMac]) {
         self.fileWatcher = [[JDLocalFileObserver alloc] initWithFilePath:jsFilePathOnMac changeBlock:^{
@@ -121,6 +122,11 @@
 - (void)testCString:(char *)charP
 {
     NSLog(@"value is %s", charP);
+}
+
+- (void)print
+{
+    NSLog(@"self get assoicate int is %ld", (long)self.associateObject.associateInt);
 }
 
 @end
