@@ -2,7 +2,7 @@
 
 **JavaScript-Based Tool For Inspecting Running State Of Your Application**
 
-> The status of this project is under rapid development and first stable version is currently hold on master
+> The status of this project is under rapid development and first stable version is v0.5
 
 JSDebugger is a runtime inspecting tool for you to dig into details of your applications or change application logics dynamically.
 
@@ -148,7 +148,7 @@ Here we list all features currently supported by **JSDebugger**:
 - [ ] Customized Struct
 - [ ] Getter 
 - [x] VA_LIST
-- [ ] Associate Object
+- [x] Associate Object
 - [ ] Block
 - [x] C Pointer
 
