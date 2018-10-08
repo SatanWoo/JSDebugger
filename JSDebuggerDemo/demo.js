@@ -57,5 +57,11 @@ aso.associateInt = 5;
 
 vc.print();
 
+// Get AssoicateObject Directly
+var asovalu = aso.associateInt;
+
+vc.printNumb_(asovalu);
+
+
 
 

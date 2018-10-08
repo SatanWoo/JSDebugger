@@ -14,6 +14,7 @@
 #import "JDJSTypeToOCType.h"
 #import "JDOCTypeToJSType.h"
 #import "JDFFIContext.h"
+#import "JDNSStringFromJSString.h"
 #import "JDMethodBridge.h"
 @import ObjectiveC.runtime;
 
@@ -43,6 +44,11 @@ static JSValueRef JDInstanceGetProperty(JSContextRef ctx, JSObjectRef object, JS
     // @SatanWoo: Search Property First => Method IMP
     id instance = (__bridge id)(JSObjectGetPrivate(object));
     if (!instance) return JSValueMakeUndefined(ctx);
+    
+    id associateValue = objc_getAssociatedObject(instance, (void *)NSSelectorFromString(ocPropertyName));
+    if (associateValue) {
+        return JDConvertNSObjectToJSValue(ctx, associateValue);
+    }
     
     // @SatanWoo: Try regard it as property getter call directly
     SEL sel_data = NSSelectorFromString(JDFormatJSFunction(ocPropertyName));

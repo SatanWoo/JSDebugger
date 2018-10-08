@@ -19,12 +19,12 @@
 - (void)setAssociateInt:(NSInteger)associateInt
 {
     NSNumber *number = @(associateInt);
-    objc_setAssociatedObject(self, _cmd, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(associateInt), number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSInteger)associateInt
 {
-    NSNumber *number = objc_getAssociatedObject(self, @selector(setAssociateInt:));
+    NSNumber *number = objc_getAssociatedObject(self, _cmd);
     if (![number isKindOfClass:[NSNumber class]]) {
         return NSNotFound;
     }

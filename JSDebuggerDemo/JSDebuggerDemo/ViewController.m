@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TestAssociateObject.h"
 #import <JSDebugger/JSDebugger.h>
+#import <objc/runtime.h>
 
 @interface ViewController ()
 {
@@ -36,6 +37,12 @@
     self.testLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 100, 150, 50)];
     self.testLabel.text = @"Try JSDebugger!";
     self.testLabel.textColor = [UIColor orangeColor];
+    
+    self.associateObject = [[TestAssociateObject alloc] init];
+    
+    self.associateObject.associateInt = 5;
+    
+    //id val = objc_getAssociatedObject(self.associateObject, (void *)@"assoicateKey");
     
     [self.view addSubview:self.testLabel];
     
@@ -127,6 +134,11 @@
 - (void)print
 {
     NSLog(@"self get assoicate int is %ld", (long)self.associateObject.associateInt);
+}
+
+- (void)printNumb:(NSNumber *)val
+{
+    NSLog(@"val is %@", val);
 }
 
 @end

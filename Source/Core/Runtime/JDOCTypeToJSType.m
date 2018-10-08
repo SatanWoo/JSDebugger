@@ -9,6 +9,10 @@
 #import "JDOCTypeToJSType.h"
 #import "JDClass4JS.h"
 #import "JDInstance4JS.h"
+#import "JDMethod4JS.h"
+#import "JDPointer4JS.h"
+
+@import ObjectiveC.objc;
 @import ObjectiveC.runtime;
 
 static bool isBooleanClass(NSNumber *number)
@@ -62,6 +66,13 @@ JSValueRef JDConvertNSObjectToJSValue(JSContextRef ctx, NSObject *object)
             
         } else if ([object isKindOfClass:[NSNull class]]) {
             return JSValueMakeNull(ctx);
+        } else if ([object isKindOfClass:[NSValue class]]) {
+            NSValue *value = (NSValue *)object;
+            SEL sel = (SEL)[value pointerValue];
+            
+            BOOL isMapped = sel_isMapped(sel);
+            if (isMapped) return JSObjectMake(ctx, JDMethod4JS(), (void *)sel);
+            return JSObjectMake(ctx, JDPointer4JS(), [value pointerValue]);
         }
     }
     
