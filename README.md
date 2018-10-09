@@ -94,7 +94,7 @@ Then you will make some operation on it:
 
 ## Playground
 
-We provide you with a mechansim to debug instantly with the help of **JSDebugger Playground**
+We provide you with a mechanism to debug instantly with the help of **JSDebugger Playground**
 
 It's already integrated into **JSDebugger**. The usage of it is quite simple, suppose you have a `test.js` on your `Desktop`. 
 
