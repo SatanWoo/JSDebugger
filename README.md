@@ -132,7 +132,7 @@ Checkout `demo.js` in the JSDebuggerDemo, it shows great detail of what you can 
 
 ## Contribution
 
-- JunyiXie
+Please file a new issue if you feel confused or found some bugs.
 
 ## Features:
 
@@ -146,7 +146,7 @@ Here we list all features currently supported by **JSDebugger**:
 - [x] Choose  
 - [x] Introspect (Partially)
 - [ ] Customized Struct
-- [ ] Getter 
+- [x] Getter 
 - [x] VA_LIST
 - [x] Associate Object
 - [ ] Block
@@ -156,7 +156,6 @@ Here we list all features currently supported by **JSDebugger**:
 
 An IDE with live Objective-C to JavaScript convertion is under development.   
 You can really look forward to it!
-
 
 ## Reference
 
