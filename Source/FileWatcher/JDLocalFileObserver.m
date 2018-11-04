@@ -7,14 +7,14 @@
 //
 
 #import "JDLocalFileObserver.h"
+#import "JDLocalFilePresenter.h"
 
-@interface JDLocalFileObserver()
+@interface JDLocalFileObserver() <JDLocalFilePresenterDelegate>
 
 @property (nonatomic, copy) JDFileChangeBlock changeBlock;
 @property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, strong) JDLocalFilePresenter *presenter;
 
-@property (nonatomic, strong) dispatch_source_t fileSource;
-@property (nonatomic) int fileHandle;
 @end
 
 @implementation JDLocalFileObserver
@@ -25,53 +25,27 @@
     if (self) {
         _filePath = [filePath copy];
         _changeBlock = [change copy];
+        
+        _presenter = [[JDLocalFilePresenter alloc] initWithFile:_filePath];
+        _presenter.delegate = self;
     }
     return self;
 }
 
 - (void)start
 {
-    if (self.fileSource) { return; }
-    
-    self.fileHandle = open([self.filePath fileSystemRepresentation], O_EVTONLY);
-    if (self.fileHandle < 0) {
-        NSException *exception = [NSException exceptionWithName:@"JDFileLoadFailed"
-                                                         reason:@"[JSDebugger]::File Handle Cannot Be Created"
-                                                       userInfo:@{@"filePath": self.filePath ?: @""}];
-        
-        [exception raise];
-    }
-    
-    self.fileSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE,
-                                             self.fileHandle,
-                                             DISPATCH_VNODE_WRITE | DISPATCH_VNODE_DELETE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_ATTRIB |
-                                             DISPATCH_VNODE_LINK | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE,
-                                             DISPATCH_TARGET_QUEUE_DEFAULT);
-    
-    dispatch_source_set_event_handler(self.fileSource, ^() {
-        unsigned long const type = dispatch_source_get_data(self.fileSource);
-        switch (type) {
-            default:
-            {
-                if (self.changeBlock) self.changeBlock();
-                break;
-            }
-        }
-    });
-    
-    dispatch_source_set_cancel_handler(self.fileSource, ^{
-        close(self.fileHandle);
-    });
-    
-    dispatch_resume(self.fileSource);
+    [NSFileCoordinator addFilePresenter:self.presenter];
 }
 
 - (void)stop
 {
-    if (!self.fileSource) { return; }
-    
-    dispatch_cancel(self.fileSource);
-    self.fileSource = nil;
+    [NSFileCoordinator removeFilePresenter:self.presenter];
+}
+
+#pragma mark - JDLocalFilePresenterDelegate
+- (void)fileDidChangeAtURL:(NSURL *)URL inPresenter:(JDLocalFilePresenter *)presenter
+{
+    if (self.changeBlock) self.changeBlock();
 }
 
 @end

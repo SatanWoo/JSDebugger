@@ -15,7 +15,7 @@ ViewController.printNSArray_(array);
 var label = choose(UILabel)[0];
 
 // Setter
-label.text = "SatanWoo";
+label.text = "WZQTQL";
 
 // Using Method Insteat Of Getter
 var tex = label.text();
