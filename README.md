@@ -2,7 +2,7 @@
 
 **JavaScript-Based Tool For Inspecting Running State Of Your Application**
 
-> The status of this project is under rapid development and first stable version is v0.5
+> The status of this project is under rapid development and first stable version is v0.8
 
 JSDebugger is a runtime inspecting tool for you to dig into details of your applications or change application logics dynamically.
 
@@ -94,7 +94,7 @@ Then you will make some operation on it:
 
 ## Playground
 
-We provide you with a mechansim to debug instantly with the help of **JSDebugger Playground**
+We provide you with a mechanism to debug instantly with the help of **JSDebugger Playground**
 
 It's already integrated into **JSDebugger**. The usage of it is quite simple, suppose you have a `test.js` on your `Desktop`. 
 
@@ -132,7 +132,7 @@ Checkout `demo.js` in the JSDebuggerDemo, it shows great detail of what you can 
 
 ## Contribution
 
-- JunyiXie
+Please file a new issue if you feel confused or found some bugs.
 
 ## Features:
 
@@ -146,7 +146,7 @@ Here we list all features currently supported by **JSDebugger**:
 - [x] Choose  
 - [x] Introspect (Partially)
 - [ ] Customized Struct
-- [ ] Getter 
+- [x] Getter 
 - [x] VA_LIST
 - [x] Associate Object
 - [ ] Block
@@ -156,7 +156,6 @@ Here we list all features currently supported by **JSDebugger**:
 
 An IDE with live Objective-C to JavaScript convertion is under development.   
 You can really look forward to it!
-
 
 ## Reference
 
